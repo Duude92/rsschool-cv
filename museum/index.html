@@ -1,0 +1,133 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/svg/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <a href="index.html">
+                LOUVRE
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li> <a href="#visiting">   Visiting    </a></li>
+                <li> <a href="#explore">    Explore     </a></li>
+                <li> <a href="#video">      Video       </a></li>
+                <li> <a href="#tickets">   Tickets      </a></li>
+                <li> <a href="#contacts">   Contacts    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section welcome dark" id="welcome">
+            <div class="container">
+                <div class="section-title text-white welcome-message">Welcome <br> to the Louvre</div>
+                <div class="welcomeundertext">From the castle to the museum</div>
+                <input type="button" class="welcomebutton" value="Discover the Louvre">
+            </div>
+        </section>
+        <section class="section visiting" id="visiting">
+            <div class="container">
+                <div class="section-title visiting-heading text-golden">Virtual tour</div>
+                <div class="cards-container">
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                    <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
+                        <p class="title">Royal Palace</p>
+                        <p class="virtualtour">360° Virtual Tour </p>
+                        <p class="streetview">Google Street Panorama View</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section explore dark" id="explore">
+            <div class="container flex">
+                <div class="text-white">
+                    <div class="section-title underline explore-margin">Picture explore</div>
+                    <p class="explore-description"> Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                    <p class="explore-description"> It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                    <p class="explore-description"> The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                </div>
+                <img src="assets/img/LasMeninasContrast.jpg" alt="Las Menina">
+            </div>
+        </section>
+        <section class="section video" id="video">
+            <div class="container">
+                <video src="assets/video/video.mp4" poster="assets/video/poster.jpg" controls class="video-player"></video>
+                <div class="flex">
+                    <div class="section-title text-golden title">Video journey</div>
+                    <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+                </div>
+            </div>
+        </section>
+        <section class="section tickets dark">
+            <div class="container text-white">
+                <div class="section-title visiting-heading">Buy tickets</div>
+                <div class="flex">
+                    <img src="assets/img/Venus.jpg" alt="Shield of Aeneas">
+                    <!-- <div class="ticket-selector flex"> -->
+                    <div class="ticket-type">
+                        <h2>Ticket Type</h2>
+                        <!-- <div class="flex-column"> -->
+                        <input type="radio" id="Permanent">
+                        <label for="Permanent">Permanent exhibition</label>
+                        <br>
+                        <input type="radio" id="Temporary">
+                        <label for="Temporary">Temporary exhibition</label>
+                        <br>
+                        <input type="radio" id="Combined">
+                        <label for="Combined">Combined exhibition</label>
+                        <!-- </div> -->
+                    </div>
+                    <div class="ticket-amount">
+                        <h2>Amount</h2>
+
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </section>
+        <section class="section sixth"></section>
+    </main>
+    <footer class="dark">
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+body {
+    width: 100%;
+    margin: 0%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+}
+
+header .logo {
+    width: 38%;
+    margin-left: 12.5%;
+    margin-top: 3.5%;
+    background-image: url("assets/svg/logo.svg");
+    background-repeat: no-repeat;
+}
+
+header .logo a {
+    margin-left: 9.4%;
+    margin-top: 100%;
+    color: white;
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header nav {
+    max-width: 720px;
+    padding-top: 3.5%;
+    margin-right: 14%;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    list-style: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+header nav a {
+    margin-right: 72px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.section-title {
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    min-height: 80px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: calc(100% - 40px);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark {
+    background-color: black;
+}
+
+.welcome {
+    background-image: url("assets/img/background.png");
+    background-position: calc(100% - 0px) calc(100% - 0px);
+    background-repeat: no-repeat;
+    min-height: 670px;
+}
+
+.welcome-message {
+    padding-top: 5.8%;
+}
+
+.welcome .bgimage {
+    float: right;
+    padding-right: 0px;
+    padding-top: -20px;
+}
+
+.text-white {
+    color: white;
+}
+
+.visiting {
+    min-height: 1000px;
+}
+
+.text-golden {
+    color: #9D8665;
+}
+
+.visiting-heading {
+    position: relative;
+    left: 0%;
+    width: 100%;
+}
+
+.visiting-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -25;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: maroon;
+}
+
+.underline {
+    position: relative;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    bottom: -25;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 3px;
+    background-color: maroon;
+}
+
+.cards-container {
+    margin-top: 7%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 70px;
+    column-gap: 55px;
+}
+
+.cards-container a {
+    display: block;
+    min-height: 400px;
+    text-decoration: none;
+}
+
+.cards-container .title {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: black;
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.cards-container .title::after {
+    content: "";
+    position: absolute;
+    bottom: -10;
+    left: 0;
+    right: 25%;
+    height: 3px;
+    background-color: maroon;
+}
+
+.cards-container .virtualtour {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    position: relative;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.cards-container .streetview {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    position: relative;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.welcome .welcomeundertext {
+    position: absolute;
+    padding-top: 16.5%;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.welcome .welcomebutton {
+    position: absolute;
+    top: 64%;
+    left: 12.5%;
+    height: 70px;
+    width: 360px;
+    border-radius: 10px;
+    color: white;
+    background-color: maroon;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.explore {
+    padding-top: 90px;
+    min-height: 700px;
+}
+
+.explore img {
+    width: 50%;
+    height: 50%;
+}
+
+.explore .explore-description {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    width: 91%;
+}
+
+.explore .explore-margin {
+    margin-bottom: 90px;
+}
+
+.video {
+    min-height: 850px;
+}
+
+.video .video-player {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.video .title {
+    min-width: 700px;
+}
+
+.video .video-description {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    width: 91%;
+}
+
+.tickets {
+    min-height: 700px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
