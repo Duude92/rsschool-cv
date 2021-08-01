@@ -7,20 +7,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
 }
 
-header .logo {
-    width: 38%;
-    margin-left: 12.5%;
-    margin-top: 3.5%;
+header {
+    padding-top: 50px;
+    min-height: 60px;
+}
+
+.logo {
+    margin-top: 7px;
+    margin-bottom: 0px;
     background-image: url("assets/svg/logo.svg");
     background-repeat: no-repeat;
 }
 
-header .logo a {
-    margin-left: 9.4%;
-    margin-top: 100%;
+.logo a {
+    margin-left: 70px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     color: white;
     font-family: Forum;
     font-style: normal;
@@ -29,32 +33,35 @@ header .logo a {
     letter-spacing: 5px;
     text-transform: uppercase;
     text-decoration: none;
+    display: block;
+}
+
+h1 {
+    margin-top: 0px;
+    color: white;
+    font-family: Forum;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
 }
 
 header nav {
-    max-width: 720px;
-    padding-top: 3.5%;
-    margin-right: 14%;
+    margin-top: 0px;
 }
 
 header nav ul {
     display: flex;
+    margin-top: 11px;
 }
 
 header nav ul li {
     list-style: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 22px;
-    letter-spacing: 2px;
-    color: white;
-    text-decoration: none;
-    text-transform: capitalize;
 }
 
 header nav a {
-    margin-right: 72px;
+    margin-left: 76px;
     font-family: Roboto;
     font-style: normal;
     font-weight: 200;
@@ -63,6 +70,7 @@ header nav a {
     color: white;
     text-decoration: none;
     text-transform: capitalize;
+    line-height: 0px;
 }
 
 .section {
@@ -97,7 +105,7 @@ header nav a {
 
 .welcome {
     background-image: url("assets/img/background.png");
-    background-position: calc(100% - 40px) calc(100%);
+    background-position: calc(100% - 0px) calc(100% - 0px);
     background-repeat: no-repeat;
     min-height: 665px;
 }
@@ -199,6 +207,10 @@ header nav a {
     text-decoration: none;
 }
 
+.cards-container a:hover>.title::after {
+    right: 0px;
+}
+
 .cards-container .title {
     position: relative;
     margin-top: 24px;
@@ -217,6 +229,7 @@ header nav a {
     position: absolute;
     bottom: -11;
     left: 0;
+    transition: 1s;
     right: 32%;
     height: 3px;
     background-color: maroon;
@@ -257,7 +270,7 @@ header nav a {
 }
 
 .explore .explore-description {
-    margin-top: 25px;
+    margin-top: 24px;
     margin-bottom: 0px;
     position: relative;
     font-family: Roboto;
@@ -317,4 +330,79 @@ header nav a {
 .flex-column {
     display: flex;
     flex-direction: column;
+}
+
+.contacts {
+    min-height: 812px;
+}
+
+.contacts-description {
+    margin-top: 115px;
+    margin-bottom: 26px;
+    line-height: 33px;
+    position: relative;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.contacts-address {
+    margin-bottom: 0px;
+    line-height: 46px;
+    position: relative;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    font-size: 22px;
+}
+
+.contacts img {
+    margin-top: 104px;
+}
+
+footer {
+    padding-top: 47px;
+    min-height: 300px;
+    padding-top: 47px;
+}
+
+.footer-logo {
+    min-height: 80px;
+    float: left;
+}
+
+footer nav {
+    max-height: 100px;
+    margin-top: 30px;
+    margin-left: 300px;
+    max-width: 555px;
+}
+
+footer nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 150px;
+}
+
+footer nav ul li {
+    max-width: 200px;
+}
+
+footer nav ul li a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 50px;
 }
