@@ -32,10 +32,13 @@
     </header>
     <main>
         <section class="section welcome dark" id="welcome">
-            <div class="container">
+            <div class="container welcome-container">
                 <div class="section-title text-white welcome-message">Welcome <br> to the Louvre</div>
                 <div class="welcomeundertext">From the castle to the museum</div>
-                <input type="button" class="welcomebutton" value="Discover the Louvre">
+                <!-- <input type="button" class="welcomebutton" value="Discover the Louvre"> -->
+                <a href="" class="welcomebutton">
+                    <p>Discover the Louvre</p>
+                </a>
             </div>
         </section>
         <section class="section visiting" id="visiting">
@@ -98,19 +101,19 @@
         <section class="section tickets dark">
             <div class="container text-white">
                 <div class="section-title visiting-heading">Buy tickets</div>
-                <div class="flex">
+                <div class="flex tickets-container">
                     <img src="assets/img/Venus.jpg" alt="Shield of Aeneas">
                     <!-- <div class="ticket-selector flex"> -->
                     <div class="ticket-type">
                         <h2>Ticket Type</h2>
                         <!-- <div class="flex-column"> -->
-                        <input type="radio" id="Permanent">
+                        <input type="radio" id="Permanent" name="ticket" checked>
                         <label for="Permanent">Permanent exhibition</label>
                         <br>
-                        <input type="radio" id="Temporary">
+                        <input type="radio" id="Temporary" name="ticket">
                         <label for="Temporary">Temporary exhibition</label>
                         <br>
-                        <input type="radio" id="Combined">
+                        <input type="radio" id="Combined" name="ticket">
                         <label for="Combined">Combined exhibition</label>
                         <!-- </div> -->
                     </div>
@@ -122,7 +125,11 @@
                 </div>
             </div>
         </section>
-        <section class="section sixth"></section>
+        <section class="section contacts">
+            <div class="container">
+                <div class="section-title text-golden title underline">Contacts</div>
+            </div>
+        </section>
     </main>
     <footer class="dark">
 

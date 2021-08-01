@@ -76,7 +76,7 @@ header nav a {
     font-weight: normal;
     font-size: 80px;
     min-height: 80px;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     text-transform: uppercase;
 }
 
@@ -97,19 +97,49 @@ header nav a {
 
 .welcome {
     background-image: url("assets/img/background.png");
-    background-position: calc(100% - 0px) calc(100% - 0px);
+    background-position: calc(100% - 40px) calc(100%);
     background-repeat: no-repeat;
-    min-height: 670px;
+    min-height: 665px;
 }
 
 .welcome-message {
-    padding-top: 5.8%;
+    padding-top: 105px;
 }
 
 .welcome .bgimage {
     float: right;
     padding-right: 0px;
     padding-top: -20px;
+}
+
+.welcome .welcomeundertext {
+    position: relative;
+    padding-top: 27px;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    letter-spacing: 1.7px;
+    text-decoration: none;
+}
+
+.welcome .welcomebutton {
+    margin-top: 75px;
+    height: 75px;
+    width: 360px;
+    border-radius: 10px;
+    color: white;
+    background-color: maroon;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 75px;
+    display: block;
 }
 
 .text-white {
@@ -133,7 +163,7 @@ header nav a {
 .visiting-heading::after {
     content: "";
     position: absolute;
-    bottom: -25;
+    bottom: -30;
     left: 0;
     right: 0;
     height: 3px;
@@ -147,21 +177,20 @@ header nav a {
 .underline::after {
     content: "";
     position: absolute;
-    bottom: -25;
+    bottom: -30;
     left: 0;
     right: 0;
-    width: 90%;
     height: 3px;
     background-color: maroon;
 }
 
 .cards-container {
-    margin-top: 7%;
+    margin-top: 105px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    row-gap: 70px;
-    column-gap: 55px;
+    row-gap: 77px;
+    column-gap: 60px;
 }
 
 .cards-container a {
@@ -172,7 +201,7 @@ header nav a {
 
 .cards-container .title {
     position: relative;
-    margin-top: 20px;
+    margin-top: 24px;
     margin-bottom: 0px;
     color: black;
     font-family: Forum;
@@ -186,15 +215,15 @@ header nav a {
 .cards-container .title::after {
     content: "";
     position: absolute;
-    bottom: -10;
+    bottom: -11;
     left: 0;
-    right: 25%;
+    right: 32%;
     height: 3px;
     background-color: maroon;
 }
 
 .cards-container .virtualtour {
-    margin-top: 20px;
+    margin-top: 21px;
     margin-bottom: 0px;
     position: relative;
     color: black;
@@ -205,7 +234,7 @@ header nav a {
 }
 
 .cards-container .streetview {
-    margin-top: 10px;
+    margin-top: 9px;
     margin-bottom: 0px;
     position: relative;
     color: black;
@@ -215,65 +244,43 @@ header nav a {
     font-size: 18px;
 }
 
-.welcome .welcomeundertext {
-    position: absolute;
-    padding-top: 16.5%;
-    color: white;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 29px;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-}
-
-.welcome .welcomebutton {
-    position: absolute;
-    top: 64%;
-    left: 12.5%;
-    height: 70px;
-    width: 360px;
-    border-radius: 10px;
-    color: white;
-    background-color: maroon;
-    border: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    letter-spacing: 3px;
-    text-decoration: none;
-}
-
 .explore {
-    padding-top: 90px;
-    min-height: 700px;
+    /* padding-top: 75px; */
+    min-height: 713px;
 }
 
 .explore img {
+    margin-top: 14px;
+    padding-top: 0px;
     width: 50%;
     height: 50%;
 }
 
 .explore .explore-description {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 0px;
     position: relative;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    letter-spacing: 1px;
-    line-height: 40px;
+    letter-spacing: 1.06px;
+    line-height: 39.3px;
     width: 91%;
 }
 
+.explore span {
+    color: khaki;
+    letter-spacing: 1px;
+}
+
 .explore .explore-margin {
-    margin-bottom: 90px;
+    margin-bottom: 103px;
 }
 
 .video {
-    min-height: 850px;
+    margin-top: 90px;
+    min-height: 769px;
 }
 
 .video .video-player {
@@ -286,20 +293,25 @@ header nav a {
 }
 
 .video .video-description {
-    margin-top: 0px;
+    margin-top: 5px;
+    margin-left: 20px;
     margin-bottom: 0px;
     position: relative;
     font-family: Roboto;
     font-style: normal;
     font-weight: bolder;
     font-size: 22px;
-    letter-spacing: 1px;
+    letter-spacing: 0.15px;
     line-height: 40px;
     width: 91%;
 }
 
 .tickets {
     min-height: 700px;
+}
+
+.tickets-container {
+    margin-top: 105px;
 }
 
 .flex-column {
