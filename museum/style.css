@@ -505,6 +505,9 @@ header nav a {
     font-size: 35px;
     display: block;
     cursor: pointer;
+    background-color: black;
+    border: none;
+    color: white;
 }
 
 .amount-container {
@@ -538,6 +541,8 @@ header nav a {
     width: 175px;
     height: 50px;
     border-radius: 3px;
+    border-style: none;
+    cursor: pointer;
     text-align: center;
     line-height: 50px;
     font-size: 20px;
