@@ -306,6 +306,24 @@ header nav a {
     margin-bottom: 50px;
 }
 
+.video-player input[type="button"] {
+    /* display: none; */
+}
+
+.video-player .playbutton {
+    background-image: url("assets/svg/playbutton.svg");
+    display: block;
+    border-color: silver;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.video-player-content {
+    background-image: url("assets/video/poster.jpg");
+    min-width: 1440px;
+    min-height: 630px;
+}
+
 .video .title {
     min-width: 700px;
 }
@@ -384,10 +402,31 @@ header nav a {
     font-weight: bold;
 }
 
+.amount input[type="number"] {
+    height: 100%;
+    min-width: 40px;
+    background-color: black;
+    color: white;
+    font-family: Roboto;
+    min-width: 40px;
+    border-style: none;
+    text-align: center;
+    font-stretch: wider;
+    font-size: 22px;
+}
+
+.amount input[type="number"]::-webkit-inner-spin-button,
+.amount input[type="number"]::-webkit-outer-spin-button,
+.amount input[type="number"]:focus {
+    display: none;
+}
+
 .amount-button {
     min-width: 40px;
     font-stretch: wider;
     font-size: 35px;
+    display: block;
+    cursor: pointer;
 }
 
 .amount-container {
@@ -402,8 +441,6 @@ header nav a {
     margin-top: 15px;
     margin-bottom: 35px;
 }
-
-.total-container {}
 
 .total {
     margin-top: 50px;

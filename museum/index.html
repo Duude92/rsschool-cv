@@ -49,7 +49,7 @@
                 <h2 class="section-title visiting-heading text-golden">Virtual tour</h2>
                 <div class="cards-container">
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
-                        <p class="title">Royal Palace</p>
+                        <h3 class="title">Royal Palace</h3>
                         <p class="virtualtour">360° Virtual Tour </p>
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
@@ -59,22 +59,22 @@
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
-                        <p class="title">Royal Palace</p>
+                        <h3 class="title">Royal Palace</h3>
                         <p class="virtualtour">360° Virtual Tour </p>
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
-                        <p class="title">Royal Palace</p>
+                        <h3 class="title">Royal Palace</h3>
                         <p class="virtualtour">360° Virtual Tour </p>
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
-                        <p class="title">Royal Palace</p>
+                        <h3 class="title">Royal Palace</h3>
                         <p class="virtualtour">360° Virtual Tour </p>
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
-                        <p class="title">Royal Palace</p>
+                        <h3 class="title">Royal Palace</h3>
                         <p class="virtualtour">360° Virtual Tour </p>
                         <p class="streetview">Google Street Panorama View</p>
                     </a>
@@ -94,7 +94,11 @@
         </section>
         <section class="section video" id="video">
             <div class="container">
-                <video src="assets/video/video.mp4" poster="assets/video/poster.jpg" controls class="video-player"></video>
+                <div class="video-player">
+                    <div class="video-player-content">
+                        <input type="button" value="playbutton" class="playbutton">
+                    </div>
+                </div>
                 <div class="flex">
                     <h2 class="section-title text-golden title">Video journey</h2>
                     <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
@@ -132,7 +136,7 @@
                                     Basic 18+
                                     <div class="amount flex">
                                         <div class="amount-button">-</div>
-                                        1
+                                        <input type="number" name="basic" id="basic" min="1" value="1">
                                         <div class="amount-button">+</div>
                                     </div>
                                 </div>
@@ -140,7 +144,7 @@
                                     Senior 65+
                                     <div class="amount flex">
                                         <div class="amount-button">-</div>
-                                        1
+                                        <input type="number" name="basic" id="basic" min="1" value="1">
                                         <div class="amount-button">+</div>
                                     </div>
                                 </div>
