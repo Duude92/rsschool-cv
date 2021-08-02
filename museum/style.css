@@ -304,24 +304,102 @@ header nav a {
 .video .video-player {
     width: 100%;
     margin-bottom: 50px;
+    vertical-align: middle;
+    display: table-cell;
 }
 
-.video-player input[type="button"] {
-    /* display: none; */
+.video-control-panel {
+    width: 100%;
+    min-height: 63px;
+    background-color: black;
+    padding-top: 22px;
+    margin-bottom: 40px;
 }
 
-.video-player .playbutton {
+.video-control-panel input[type="button"] {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: unset;
+    background-size: 100% 100%;
+    display: block;
+    border: none;
+}
+
+.video-control-panel .previous {
+    float: left;
+    margin-left: 35px;
+    background-image: url("assets/svg/previous.svg");
+}
+
+.video-control-panel .playbutton {
+    background-image: url("assets/svg/playbutton-small.svg");
+}
+
+.video-control-panel .next {
+    background-image: url("assets/svg/next.svg");
+}
+
+.video-control-panel .scrollbar {
+    width: 820px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 0px;
+}
+
+.video-control-panel input[type="range"] {
+    margin-top: 15px;
+    height: 10px;
+    border-radius: 0px;
+}
+
+.video-control-panel .volume {
+    margin-right: 13px;
+}
+
+.video-control-panel .volumebar {
+    margin-left: 20px;
+    width: 160px;
+    height: auto;
+}
+
+.video-control-panel .fullscreen {
+    margin-right: 40px;
+}
+
+.video-control-panel .volumebutton {
+    background-image: url("assets/svg/volume.svg");
+    float: left;
+}
+
+.video-control-panel .fullscreen {
+    background-image: url("assets/svg/fullscreen.svg");
+}
+
+.video-player-content .playbutton {
+    position: relative;
+    transform: translate(0, 90%);
     background-image: url("assets/svg/playbutton.svg");
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    background-position: 60%;
+    background-color: unset;
     display: block;
     border-color: silver;
     border-style: solid;
     border-radius: 50%;
+    border-width: 10px;
+    width: 225px;
+    height: 225px;
 }
 
 .video-player-content {
     background-image: url("assets/video/poster.jpg");
     min-width: 1440px;
-    min-height: 630px;
+    min-height: 629px;
 }
 
 .video .title {
@@ -455,11 +533,11 @@ header nav a {
 .buy-button {
     display: block;
     text-decoration: none;
-    margin-top: 50px;
+    margin-top: 55px;
     background-color: white;
     width: 175px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 3px;
     text-align: center;
     line-height: 50px;
     font-size: 20px;
