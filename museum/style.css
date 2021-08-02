@@ -334,10 +334,6 @@ header nav a {
     font-style: normal;
 }
 
-.tickets-container {
-    margin-top: 106px;
-}
-
 .tickets-container img {
     float: left;
 }
@@ -350,15 +346,10 @@ header nav a {
     font-weight: bolder;
     text-decoration: none;
     margin: 0px;
-    letter-spacing: 2.7px;
-}
-
-.ticket-type-container {
-    margin-top: 29px;
+    letter-spacing: 2.6px;
 }
 
 .ticket-selector input {
-    /* margin-left: 1px; */
     margin-left: 0px;
     width: 15px;
     height: 15px;
@@ -371,11 +362,15 @@ header nav a {
     margin-top: 0px;
     font-family: Roboto;
     font-style: normal;
+    margin-left: auto;
+    margin-right: 0px;
 }
 
 .ticket-amount h2 {
+    display: block;
+    max-width: 100px;
+    margin-right: 0px;
     margin-left: auto;
-    margin-right: 0;
 }
 
 .amount {
@@ -383,6 +378,16 @@ header nav a {
     height: 45px;
     border-style: solid;
     border-color: white;
+    text-align: center;
+    line-height: 45px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.amount-button {
+    min-width: 40px;
+    font-stretch: wider;
+    font-size: 35px;
 }
 
 .amount-container {
@@ -395,24 +400,34 @@ header nav a {
 
 .amount-block {
     margin-top: 15px;
+    margin-bottom: 35px;
 }
 
-.amount-container br {
-    line-height: 19px;
-}
+.total-container {}
 
 .total {
     margin-top: 50px;
     font-size: 26px;
     font-weight: bolder;
     letter-spacing: 3px;
-    right: 0px;
+    max-width: 150px;
+    margin-right: 0px;
+    margin-left: auto;
 }
 
 .buy-button {
+    display: block;
+    text-decoration: none;
     margin-top: 50px;
     background-color: white;
-    width: 200px;
+    width: 175px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: bold;
 }
 
 .checkmark {
@@ -426,12 +441,19 @@ header nav a {
     border-radius: 50%;
 }
 
+.tickets-container {
+    margin-top: 105px;
+}
+
+.ticket-type-container {
+    margin-top: 40px;
+}
+
 .ticket-type label {
-    /* margin-left: 17px; */
     letter-spacing: 0.2px;
     font-style: normal;
     font-weight: normal;
-    line-height: 75px;
+    line-height: 56px;
     font-size: 22px;
     display: block;
 }
@@ -445,10 +467,10 @@ header nav a {
     border-color: white;
     border-style: solid;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     content: ' ';
-    margin-right: 17px;
+    margin-right: 20px;
     margin-left: 0px;
 }
 
