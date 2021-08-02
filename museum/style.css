@@ -109,7 +109,7 @@ header nav a {
 
 .welcome {
     background-image: url("assets/img/background.png");
-    background-position: calc(100% - 0px) calc(100% - 0px);
+    background-position: calc(50% + 351px) 100%;
     background-repeat: no-repeat;
     min-height: 665px;
 }
@@ -437,7 +437,6 @@ footer nav ul li a {
 }
 
 .social ul li:hover {
-    color: #9D8665;
     filter: invert(51%) sepia(46%) saturate(259%) hue-rotate(356deg) brightness(96%) contrast(90%);
 }
 
