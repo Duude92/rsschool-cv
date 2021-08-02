@@ -677,7 +677,7 @@ footer {
 footer nav {
     max-height: 100px;
     margin-top: 0px;
-    margin-left: 20px;
+    margin-left: 0px;
     min-width: 555px;
 }
 
@@ -687,6 +687,7 @@ footer nav ul {
     flex-wrap: wrap;
     justify-content: space-between;
     max-height: 150px;
+    padding-left: 40px;
 }
 
 footer nav ul li {
@@ -707,13 +708,13 @@ footer nav ul li a {
 
 .social {
     margin-top: 89px;
-    min-width: 500px;
+    min-width: 630px;
     justify-content: flex-end;
     gap: 50px;
 }
 
 .social ul {
-    padding-left: 0px;
+    padding-left: 20px;
 }
 
 .social ul li {
