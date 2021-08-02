@@ -19,10 +19,16 @@ header {
 }
 
 .logo {
+    display: block;
     margin-top: 7px;
     margin-bottom: 0px;
     background-image: url("assets/svg/logo.svg");
     background-repeat: no-repeat;
+    transition: 1s;
+}
+
+.logo:hover {
+    filter: invert(51%) sepia(46%) saturate(259%) hue-rotate(356deg) brightness(96%) contrast(90%);
 }
 
 .logo a {
@@ -64,7 +70,7 @@ header nav ul li {
     list-style: none;
 }
 
-header nav a {
+nav a {
     margin-left: 76px;
     font-family: Roboto;
     font-style: normal;
@@ -75,6 +81,11 @@ header nav a {
     text-decoration: none;
     text-transform: capitalize;
     line-height: 0px;
+    transition: 1s;
+}
+
+nav a:hover {
+    color: #9D8665;
 }
 
 .section {
@@ -153,6 +164,11 @@ header nav a {
     text-align: center;
     line-height: 75px;
     display: block;
+    transition: 1s;
+}
+
+.welcome .welcomebutton:hover {
+    background-color: #9D8665;
 }
 
 .text-white {
@@ -548,6 +564,11 @@ header nav a {
     font-size: 20px;
     letter-spacing: 3px;
     font-weight: bold;
+    transition: 1s;
+}
+
+.buy-button:hover {
+    background-color: #9D8665;
 }
 
 .checkmark {
