@@ -569,6 +569,16 @@ header nav a {
     margin-top: 40px;
 }
 
+.ticket-type .custom-radio {
+    position: absolute;
+    opacity: 255;
+    z-index: -1;
+}
+
+.ticket-type .custom-radio:checked+label::before {
+    background-color: silver;
+}
+
 .ticket-type label {
     letter-spacing: 0.2px;
     font-style: normal;
@@ -578,7 +588,7 @@ header nav a {
     display: block;
 }
 
-.ticket-type label:hover> ::before {
+.ticket-type label:hover::before {
     background-color: white;
 }
 
