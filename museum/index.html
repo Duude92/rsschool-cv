@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,7 +36,7 @@
     <main>
         <section class="section welcome dark" id="welcome">
             <div class="container welcome-container">
-                <div class="section-title text-white welcome-message">Welcome <br> to the Louvre</div>
+                <h2 class="section-title text-white welcome-message">Welcome <br> to the Louvre</h2>
                 <div class="welcomeundertext">From the castle to the museum</div>
                 <!-- <input type="button" class="welcomebutton" value="Discover the Louvre"> -->
                 <a href="" class="welcomebutton">
@@ -45,7 +46,7 @@
         </section>
         <section class="section visiting" id="visiting">
             <div class="container">
-                <div class="section-title visiting-heading text-golden">Virtual tour</div>
+                <h class="section-title visiting-heading text-golden">Virtual tour</h>
                 <div class="cards-container">
                     <a href=""><img src="assets/img/Royal.jpg" alt="Royal Palace">
                         <p class="title">Royal Palace</p>
@@ -83,7 +84,7 @@
         <section class="section explore dark" id="explore">
             <div class="container flex">
                 <div class="text-white">
-                    <div class="section-title underline explore-margin">Picture explore</div>
+                    <h2 class="section-title underline explore-margin">Picture explore</h2>
                     <p class="explore-description"> Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                     <p class="explore-description"> It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
                     <p class="explore-description"> The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
@@ -95,41 +96,65 @@
             <div class="container">
                 <video src="assets/video/video.mp4" poster="assets/video/poster.jpg" controls class="video-player"></video>
                 <div class="flex">
-                    <div class="section-title text-golden title">Video journey</div>
+                    <h2 class="section-title text-golden title">Video journey</h2>
                     <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
                 </div>
             </div>
         </section>
         <section class="section tickets dark" id="tickets">
             <div class="container text-white">
-                <div class="section-title visiting-heading">Buy tickets</div>
-                <div class="flex tickets-container">
+                <h2 class="section-title visiting-heading">Buy tickets</h2>
+                <div class="tickets-container">
                     <img src="assets/img/Venus.jpg" alt="Shield of Aeneas">
-                    <!-- <div class="ticket-selector flex"> -->
-                    <div class="ticket-type">
-                        <h2>Ticket Type</h2>
-                        <!-- <div class="flex-column"> -->
-                        <input type="radio" id="Permanent" name="ticket" checked>
-                        <label for="Permanent">Permanent exhibition</label>
-                        <br>
-                        <input type="radio" id="Temporary" name="ticket">
-                        <label for="Temporary">Temporary exhibition</label>
-                        <br>
-                        <input type="radio" id="Combined" name="ticket">
-                        <label for="Combined">Combined exhibition</label>
-                        <!-- </div> -->
-                    </div>
-                    <div class="ticket-amount">
-                        <h2>Amount</h2>
+                    <div class="ticket-selector flex">
+                        <div class="ticket-type">
+                            <h2>Ticket Type</h2>
+                            <!-- <div class="flex-column"> -->
+                            <div class="ticket-type-container">
+                                <label for="Permanent">Permanent exhibition
+                                <input type="radio" id="Permanent" name="ticket" checked>
+                            </label>
+                                <br>
+                                <label for="Temporary">Temporary exhibition
+                                <input type="radio" id="Temporary" name="ticket">
+                            </label>
+                                <br>
+                                <label for="Combined">Combined Admission
+                                <input type="radio" id="Combined" name="ticket">
+                            </label>
+                            </div>
+                        </div>
 
+                        <div class="ticket-amount">
+                            <h2>Amount</h2>
+                            <div class="amount-container">
+                                <div class="amount-block">
+                                    Basic 18+
+                                    <div class="amount">
+                                        - 1 +
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="amount-block">
+                                    Senior 65+
+                                    <div class="amount">
+                                        - 1 +
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="total"> Total €220</p>
+                            <div class="buy-button">
+                                <a href="">Buy Now</a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- </div> -->
+
                 </div>
             </div>
         </section>
         <section class="section contacts" id="contacts">
             <div class="container">
-                <div class="section-title text-golden title underline">Contacts</div>
+                <h2 class="section-title text-golden title underline">Contacts</h2>
                 <div class="flex">
                     <div>
                         <div class="contacts-description">
@@ -151,8 +176,7 @@
             <div class="logo footer-logo">
                 <a href="index.html">LOUVRE</a>
             </div>
-
-            <nav clas="footer-navigation">
+            <nav>
                 <ul>
                     <li> <a href="#welcome">   Welcome    </a></li>
                     <li> <a href="#visiting">   Visiting    </a></li>
