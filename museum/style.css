@@ -334,6 +334,7 @@ nav a:hover {
 }
 
 .video-control-panel button {
+    cursor: pointer;
     width: 40px;
     height: 40px;
     position: relative;
@@ -366,6 +367,7 @@ nav a:hover {
 }
 
 .video-control-panel input[type="range"] {
+    cursor: pointer;
     margin-top: 15px;
     height: 10px;
     border-radius: 0px;
@@ -395,6 +397,7 @@ nav a:hover {
 }
 
 .video-player-content .playbutton {
+    cursor: pointer;
     position: relative;
     transform: translate(0, 90%);
     background-image: url("assets/svg/playbutton.svg");
@@ -658,6 +661,12 @@ nav a:hover {
     font-weight: 300;
     letter-spacing: 0.2px;
     font-size: 22px;
+}
+
+.contacts-address a {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
 }
 
 .contacts img {
