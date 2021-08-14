@@ -6,14 +6,19 @@ jQuery(document).ready(function($) {
     const sliderLeft = document.querySelector('.slider-left')
     const buttonUp = document.querySelector('.button-up')
     const buttonDown = document.querySelector('.button-down')
+    const buttonNext = document.querySelector('.next')
+    const buttonPreious = document.querySelector('.previous')
+    const buttonPlay = document.querySelector('.playButton')
+    const skipToggle = document.querySelector('.toggleSkip')
 
 
-    const Block = (title, description, bgcolor, imagePath) => {
+    const Block = (title, description, bgcolor, imagePath, audioSource) => {
         return {
             title: title,
             description: description,
             backgroundcolor: bgcolor,
-            image: imagePath
+            image: imagePath,
+            audio: 'assets/audio/' + audioSource
         }
     }
     const addBlock = (block) => {
@@ -42,10 +47,10 @@ jQuery(document).ready(function($) {
         })
     }
 
-    addBlock(Block('Beach', 'by the ocean', 'skyblue', 'beach.jpg'))
-    addBlock(Block('Foggy', 'forest', 'darkslategray', 'forest.jpg'))
-    addBlock(Block('Sunset', 'pier', 'coral', 'pier.jpg'))
-    addBlock(Block('Boat', 'on a river', 'cyan', 'river.jpg'))
+    addBlock(Block('Beach', 'by the ocean', 'skyblue', 'beach.jpg', 'seaside.mp3'))
+    addBlock(Block('Foggy', 'forest', 'darkslategray', 'forest.jpg', 'forest.mp3'))
+    addBlock(Block('Sunset', 'pier', 'coral', 'pier.jpg', 'sunset.mp3'))
+    addBlock(Block('Boat', 'on a river', 'cyan', 'river.jpg', 'river.mp3'))
     document.body.onload = getBlocks()
 
 
@@ -67,6 +72,25 @@ jQuery(document).ready(function($) {
 
     buttonUp.addEventListener('click', () => changeSlide('up'))
     buttonDown.addEventListener('click', () => changeSlide('down'))
+    buttonNext.addEventListener('click', () => changeSlide('up'))
+    buttonPreious.addEventListener('click', () => changeSlide('down'))
+    buttonPlay.addEventListener('click', () => playSound())
+        //const audio = document.querySelector('.audio-player')
+    const audio = document.createElement('audio')
+    document.body.append(audio)
+    let play = false
+    const playSound = () => {
+        play = !play
+        if (play) {
+            buttonPlay.firstChild.className = 'fas fa-pause'
+            audio.play()
+        } else {
+            buttonPlay.firstChild.className = 'fas fa-play'
+
+            audio.pause()
+        }
+        // console.log(buttonPlay.firstChild)
+    }
     window.addEventListener('mousewheel', (ev) => {
         ev.preventDefault()
         ev = ev || window.event
@@ -75,40 +99,57 @@ jQuery(document).ready(function($) {
 
     })
     const animationTime = 500
+    let currentSlide = 1
+    audio.src = blocks[currentSlide].audio
 
     const changeSlide = (direction) => {
+        if (!skipToggle.checked) {
+            audio.pause()
+        }
         const slideHeight = sliderContainer.clientHeight
         if (direction === 'up') {
+            currentSlide--
+            if (currentSlide <= 0) {
+                currentSlide = slidesLength - 1
+            }
             $('.slider-left').animate({
                 top: ''
             }, animationTime, function() {
                 sliderLeft.prepend(sliderLeft.lastChild)
                 sliderLeft.style.top = '-100vh'
-                console.log('slide')
             })
             $('.slider-right').animate({
                 top: '-300vh'
             }, animationTime, function() {
                 sliderRight.append(sliderRight.firstChild)
                 sliderRight.style.top = '-200vh'
-                console.log('slide')
             })
 
         } else if (direction === 'down') {
+            currentSlide++
+            if (currentSlide >= slidesLength) {
+                currentSlide = 0
+            }
+
             $('.slider-left').animate({
                 top: '-200vh'
             }, animationTime, function() {
                 sliderLeft.append(sliderLeft.firstChild)
                 sliderLeft.style.top = '-100vh'
-                console.log('slide')
             })
             $('.slider-right').animate({
                 top: '-100vh'
             }, animationTime, function() {
                 sliderRight.prepend(sliderRight.lastChild)
                 sliderRight.style.top = '-200vh'
-                console.log('slide')
             })
+        }
+        console.log(currentSlide)
+        if (!skipToggle.checked) {
+            audio.src = blocks[currentSlide].audio
+            if (play) {
+                audio.play()
+            }
         }
         // console.log(new WebKitCSSMatrix(window.getComputedStyle(sliderRight).transform))
         //     //sliderRight.style.transform = `translateY(-${activeSlideIndex*slideHeight}px)`
