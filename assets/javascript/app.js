@@ -21,14 +21,20 @@ const addBlock = (block) => {
 const getBlocks = () => {
     blocks.forEach(block => {
         let divLeft = document.createElement('div')
+        divLeft.className = 'leftImageContainer'
         divLeft.style.backgroundColor = block.backgroundcolor
-        sliderLeft.append(divLeft)
+        divLeft.style.backgroundImage = `url(assets/images/${block.image})`
+        let container = document.createElement('div')
+        sliderLeft.appendChild(container)
+
         let h1 = document.createElement('h1')
         h1.innerText = block.title
-        divLeft.appendChild(h1)
+        container.appendChild(h1)
         let p = document.createElement('p')
         p.innerText = block.description
-        divLeft.appendChild(p)
+        container.appendChild(p)
+        container.append(divLeft)
+
         let divRight = document.createElement('div')
         sliderRight.prepend(divRight)
         divRight.style.backgroundImage = `url(assets/images/${block.image})`
