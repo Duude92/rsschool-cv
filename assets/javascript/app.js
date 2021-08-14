@@ -67,6 +67,12 @@ jQuery(document).ready(function($) {
 
     buttonUp.addEventListener('click', () => changeSlide('up'))
     buttonDown.addEventListener('click', () => changeSlide('down'))
+    window.addEventListener('mousewheel', (ev) => {
+        ev = ev || window.event
+        let delta = ev.deltaY || ev.detail || ev.wheelDelta;
+        changeSlide((delta > 0) ? 'up' : 'down')
+
+    })
     const animationTime = 500
 
     const changeSlide = (direction) => {
