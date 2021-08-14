@@ -49,14 +49,14 @@ body {
 }
 
 .slider-left h1 {
-    font-size: 80px;
+    font-size: calc(50 * (100vw / 680));
     margin-bottom: 10px;
     margin-top: -30px;
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 }
 
 .slider-left p {
-    font-size: 32px;
+    font-size: calc(32 * (100vw / 680));
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
