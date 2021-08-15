@@ -75,7 +75,6 @@ jQuery(document).ready(function($) {
     buttonNext.addEventListener('click', () => changeSlide('up'))
     buttonPreious.addEventListener('click', () => changeSlide('down'))
     buttonPlay.addEventListener('click', () => playSound())
-        //const audio = document.querySelector('.audio-player')
     const audio = document.createElement('audio')
     document.body.append(audio)
     let play = false
@@ -89,7 +88,6 @@ jQuery(document).ready(function($) {
 
             audio.pause()
         }
-        // console.log(buttonPlay.firstChild)
     }
     window.addEventListener('mousewheel', (ev) => {
         ev.preventDefault()
@@ -130,7 +128,6 @@ jQuery(document).ready(function($) {
             if (currentSlide > slidesLength - 1) {
                 currentSlide = 0
             }
-
             $('.slider-left').animate({
                 top: '-200vh'
             }, animationTime, function() {
@@ -144,20 +141,11 @@ jQuery(document).ready(function($) {
                 sliderRight.style.top = '-200vh'
             })
         }
-        console.log(currentSlide)
         if (!skipToggle.checked) {
             audio.src = blocks[currentSlide].audio
             if (play) {
                 audio.play()
             }
         }
-        // console.log(new WebKitCSSMatrix(window.getComputedStyle(sliderRight).transform))
-        //     //sliderRight.style.transform = `translateY(-${activeSlideIndex*slideHeight}px)`
-        // console.log(window.getComputedStyle(sliderRight).transform)
-
-
-        //sliderLeft.style.transform = `translateY(${activeSlideIndex*slideHeight}px)`
-        //new WebKitCSSMatrix(window.getComputedStyle(sliderLeft).transform
-        //sliderLeft.style.top += 100;
     }
 })
