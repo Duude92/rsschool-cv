@@ -109,7 +109,7 @@ jQuery(document).ready(function($) {
         const slideHeight = sliderContainer.clientHeight
         if (direction === 'up') {
             currentSlide--
-            if (currentSlide <= 0) {
+            if (currentSlide < 0) {
                 currentSlide = slidesLength - 1
             }
             $('.slider-left').animate({
@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
 
         } else if (direction === 'down') {
             currentSlide++
-            if (currentSlide >= slidesLength) {
+            if (currentSlide > slidesLength - 1) {
                 currentSlide = 0
             }
 
