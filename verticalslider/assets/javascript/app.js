@@ -75,6 +75,7 @@ buttonNext.addEventListener('click', () => changeSlide('up'))
 buttonPreious.addEventListener('click', () => changeSlide('down'))
 buttonPlay.addEventListener('click', () => playSound())
 const audio = document.createElement('audio')
+audio.loop = true
 document.body.append(audio)
 let play = false
 const playSound = () => {
