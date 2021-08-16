@@ -89,18 +89,49 @@ jQuery(document).ready(function($) {
             audio.pause()
         }
     }
+    const animationTime = 500
+    let sliding = false
+    let lastDelta = 0
+    let lastScrollDeltaTime = 0
+
+
     window.addEventListener('mousewheel', (ev) => {
-        ev.preventDefault()
+        console.log(ev.deltaY)
+        lastScrollDeltaTime += new Date().getTime()
+
+        if ((Math.abs(ev.deltaY) < 100) || (ev.deltaY % 100 !== 0) || (sliding) || (lastDelta > Math.abs(ev.deltaY))) {
+            lastDelta = Math.abs(ev.deltaY)
+            return
+        }
+        lastScrollDeltaTime = 0
+        console.log('try to slide, sliding: ', lastDelta, Math.abs(ev.deltaY))
+
+        // console.log(new Date().getTime() - lastTriggerTime, isTouchPad)
+        // if (new Date().getTime() - lastTriggerTime < animationTime) {
+        //     //lastTriggerTime = new Date().getTime()
+
+        //     return
+        //     ev.preventDefault()
+        // }
+
+        // lastTriggerTime = new Date().getTime()
+
+        lastDelta = Math.abs(ev.deltaY)
+
+
         ev = ev || window.event
         let delta = ev.deltaY || ev.detail || ev.wheelDelta;
         changeSlide((delta > 0) ? 'up' : 'down')
 
-    })
-    const animationTime = 500
+
+    }, { passive: false })
     let currentSlide = 1
     audio.src = blocks[currentSlide].audio
 
     const changeSlide = (direction) => {
+
+        sliding = true
+
         if (!skipToggle.checked) {
             audio.pause()
         }
@@ -115,6 +146,7 @@ jQuery(document).ready(function($) {
             }, animationTime, function() {
                 sliderLeft.prepend(sliderLeft.lastChild)
                 sliderLeft.style.top = '-100vh'
+                sliding = false
             })
             $('.slider-right').animate({
                 top: '-300vh'
@@ -133,6 +165,7 @@ jQuery(document).ready(function($) {
             }, animationTime, function() {
                 sliderLeft.append(sliderLeft.firstChild)
                 sliderLeft.style.top = '-100vh'
+                sliding = false
             })
             $('.slider-right').animate({
                 top: '-100vh'
