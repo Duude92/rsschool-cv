@@ -1,7 +1,8 @@
-let blocks = []
+let _blocks = []
 
 const sliderContainer = document.querySelector('.slider-container')
 const sliderRight = document.querySelector('.slider-right')
+const sliderRightContainer = sliderRight.querySelector('.slider-right-container')
 const sliderLeft = document.querySelector('.slider-left')
 const buttonUp = document.querySelector('.button-up')
 const buttonDown = document.querySelector('.button-down')
@@ -9,6 +10,57 @@ const buttonNext = document.querySelector('.next')
 const buttonPreious = document.querySelector('.previous')
 const buttonPlay = document.querySelector('.playButton')
 const skipToggle = document.querySelector('.toggleSkip')
+const orientationButton = document.querySelector('.orientation-button')
+let actionButtons = document.querySelector('.action-buttons')
+actionButtons = actionButtons.querySelectorAll('button')
+
+console.log(`Собственная оценка работы:30 баллов.\n
+Слайдер изначально был реализован почти как в примере, за исключением того, что сами слайды не хардкодил в html - а создавал через js. \n
+Зацикленный слайдер реализовал способом анимации движения и смещения крайнего слайда. Из отличий - не стал подключать jQuery как в примере, только для этого пункта, реализовал на чистом js.\n
+Дополнительные задания: реализовал переключение слайдов колесом мыши, если у вас ноутбук - постарался максимально убрать эффект иннерциальной прокрутки.\n
+Не стал внедрять в контейнер слайдера видео или музыку - дополнил слайдер \"Плеером\", мне кажется - так интереснее выглядит.\n
+Так же добавил переключение слайдера с вертикального в горизонтальный вид (крайняя правая кнопка) - сами движения слайдов оставил вертикальными - верхние слайды перекрыты нижними, нижние слайды вложены в контейнер с overflow:hidden.\n
+В целом - последние два доп. задания сам считаю не совсем по ТЗ, хотя некоторые задания можно трактовать по своему, но считаю что свои 30 баллов я заслужил.\n
+Спасибо за проверку.`)
+
+const initSlides = () => {
+    sliderLeft.style.top = `-${sliderLeft.offsetHeight}px`
+    sliderRightContainer.style.top = `-${sliderRightContainer.offsetHeight * 2}px`
+
+}
+orientationButton.addEventListener('click', () => {
+    sliderContainer.classList.add('fade')
+    setTimeout(() => {
+        sliderContainer.classList.remove('fade')
+    }, 1000);
+
+    setTimeout(() => {
+        if (sliderContainer.classList.contains('horizontal')) {
+            sliderContainer.classList.remove('horizontal')
+            actionButtons.forEach(e => {
+                e.style = ''
+            })
+        } else {
+            sliderContainer.classList.add('horizontal')
+            setTimeout(() => {
+                actionButtons.forEach(e => {
+                    let anim = e.animate({ opacity: 0 }, 1000)
+                    anim.onfinish = _ => {
+                        e.style.opacity = 0
+                    }
+                })
+
+            }, 2000)
+        }
+        initSlides()
+    }, 500);
+
+
+
+
+})
+
+initSlides()
 
 
 const Block = (title, description, bgcolor, imagePath, audioSource) => {
@@ -21,10 +73,10 @@ const Block = (title, description, bgcolor, imagePath, audioSource) => {
     }
 }
 const addBlock = (block) => {
-    blocks.push(block)
+    _blocks.push(block)
 }
 const getBlocks = () => {
-    blocks.forEach(block => {
+    _blocks.forEach(block => {
         let divLeft = document.createElement('div')
         divLeft.className = 'leftImageContainer'
         divLeft.style.backgroundColor = block.backgroundcolor
@@ -41,7 +93,7 @@ const getBlocks = () => {
         container.append(divLeft)
 
         let divRight = document.createElement('div')
-        sliderRight.prepend(divRight)
+        sliderRightContainer.prepend(divRight)
         divRight.style.backgroundImage = `url(assets/images/${block.image})`
     })
 }
@@ -54,7 +106,7 @@ document.body.onload = getBlocks()
 
 
 
-const slidesLength = blocks.length
+const slidesLength = _blocks.length
 
 let activeSlideIndex = 0
 const onResize = () => {
@@ -65,9 +117,6 @@ const onResize = () => {
 }
 window.addEventListener('resize', onResize)
 
-
-sliderLeft.style.top = `-100vh`
-sliderRight.style.top = `-200vh`
 
 buttonUp.addEventListener('click', () => changeSlide('up'))
 buttonDown.addEventListener('click', () => changeSlide('down'))
@@ -115,7 +164,7 @@ window.addEventListener('mousewheel', (ev) => {
 
 }, { passive: false })
 let currentSlide = 1
-audio.src = blocks[currentSlide].audio
+audio.src = _blocks[currentSlide].audio
 
 const changeSlide = (direction) => {
 
@@ -130,16 +179,20 @@ const changeSlide = (direction) => {
         if (currentSlide < 0) {
             currentSlide = slidesLength - 1
         }
-        let lAnim = sliderLeft.animate({ top: '0vh' }, animationTime)
+        let lAnim = sliderLeft.animate({
+            top: `0px`
+        }, animationTime)
         lAnim.onfinish = () => {
             sliderLeft.prepend(sliderLeft.lastChild)
-            sliderLeft.style.top = '-100vh'
+            sliderLeft.style.top = `-${sliderLeft.offsetHeight}px`
             sliding = false
         }
-        let rAnim = sliderRight.animate({ top: '-300vh' }, animationTime)
+        let rAnim = sliderRightContainer.animate({
+            top: `-${sliderRightContainer.offsetHeight * 3}px`
+        }, animationTime)
         rAnim.onfinish = () => {
-            sliderRight.append(sliderRight.firstChild)
-            sliderRight.style.top = '-200vh'
+            sliderRightContainer.append(sliderRightContainer.firstChild)
+            sliderRightContainer.style.top = `-${sliderRightContainer.offsetHeight*2}px`
         }
     } else if (direction === 'down') {
         currentSlide++
@@ -147,20 +200,24 @@ const changeSlide = (direction) => {
             currentSlide = 0
         }
 
-        let lAnim = sliderLeft.animate({ top: '-200vh' }, animationTime)
+        let lAnim = sliderLeft.animate({
+            top: `-${sliderLeft.offsetHeight*2}px`
+        }, animationTime)
         lAnim.onfinish = () => {
             sliderLeft.append(sliderLeft.firstChild)
-            sliderLeft.style.top = '-100vh'
+            sliderLeft.style.top = `-${sliderLeft.offsetHeight}px`
             sliding = false
         }
-        let rAnim = sliderRight.animate({ top: '-100vh' }, animationTime)
+        let rAnim = sliderRightContainer.animate({
+            top: `-${sliderRightContainer.offsetHeight}px`
+        }, animationTime)
         rAnim.onfinish = () => {
-            sliderRight.prepend(sliderRight.lastChild)
-            sliderRight.style.top = '-200vh'
+            sliderRightContainer.prepend(sliderRightContainer.lastChild)
+            sliderRightContainer.style.top = `-${sliderRightContainer.offsetHeight*2}px`
         }
     }
     if (!skipToggle.checked) {
-        audio.src = blocks[currentSlide].audio
+        audio.src = _blocks[currentSlide].audio
         if (play) {
             audio.play()
         }

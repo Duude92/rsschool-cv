@@ -15,6 +15,11 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100vw;
+    transition: filter 1s ease-in-out;
+}
+
+.fade {
+    filter: blur(200px);
 }
 
 .slider-left {
@@ -23,6 +28,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.horizontal .slider-left {
+    height: 35%;
+    width: 100vw;
 }
 
 .slider-left>div {
@@ -37,6 +47,11 @@ body {
     flex-wrap: wrap;
 }
 
+.horizontal .slider-left>div {
+    float: left;
+    width: 100vw;
+}
+
 .leftImageContainer {
     flex-basis: 100%;
     position: absolute;
@@ -47,6 +62,10 @@ body {
     background-position: left top;
     background-size: cover;
     filter: blur(1.5rem)
+}
+
+.horizontal .leftImageContainer {
+    transform: unset;
 }
 
 .audio-container {
@@ -75,6 +94,11 @@ body {
     border-color: gray;
     color: white;
     padding-top: 0.5%;
+}
+
+.audio-container button.orientation-button {
+    border-radius: 5px;
+    margin-left: 70px;
 }
 
 .audio-container button:hover {
@@ -122,7 +146,21 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-.slider-right>div {
+.horizontal .slider-right {
+    height: 65%;
+    width: 100%;
+    top: 35%;
+    left: 0;
+    overflow: hidden;
+}
+
+.slider-right-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-right .slider-right-container>div {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -147,6 +185,22 @@ body {
     transform: translateY(-100%);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.slider-container.horizontal .action-buttons button {
+    left: 0;
+    top: 35%;
+    width: 100vw;
+    height: 35%;
+    border-radius: 0;
+    opacity: 50%;
+    font-size: 80px;
+}
+
+.slider-container.horizontal .action-buttons .button-down {
+    transform: unset;
+    top: 35%;
+    height: 55%;
 }
 
 button {
