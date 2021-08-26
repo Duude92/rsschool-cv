@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoPlayer</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <main>
+        <div class="video-player-container">
+            <div class="video-player">
+                <button class="play"><i class="fas fa-play"></i></button>
+                <video src="assets/video/Ocean.mp4"></video>
+                <div class="custom-controls">
+                    <button class="play-control"><i class="fas fa-play"></i></button>
+                    <button class="previous"><i class="fas fa-backward"></i></button>
+                    <button class="next"><i class="fas fa-forward"></i></button>
+                    <input type="range" name="progressBar" id="progressBar" class="progress-bar">
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <input type="range" name="volume" id="volume" class="volume-bar">
+                    <button class="fullscreen"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+            <div class="video-selector">
+
+            </div>
+        </div>
+        <button class="to-video-scroll"></button>
+
+        <div class="video-search-container">
+
+        </div>
+    </main>
+    <script src="assets/javascript/app.js"></script>
+</body>
+
+</html>

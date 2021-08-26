@@ -1,0 +1,86 @@
+body {
+    background-color: darkslategray;
+    margin: 0;
+}
+
+.video-player-container {
+    border-style: solid;
+    width: 90vw;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+}
+
+.video-player {
+    border: solid;
+    border-color: cadetblue;
+    width: 80%;
+    height: auto;
+    margin: 0;
+    position: relative;
+}
+
+.video-player .custom-controls {
+    position: absolute;
+    width: 100%;
+    height: calc(100vw/20);
+    border-color: deeppink;
+    border-style: solid;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-player * {
+    font-size: calc(100vw / 25);
+    color: thistle;
+}
+
+.video-player button.play {
+    position: absolute;
+    width: calc(100vw / 10);
+    height: calc(100vw / 10);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: calc(100vw - 99.5vw);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.video-player .custom-controls button,
+.video-player .custom-controls input {
+    left: 0;
+    float: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.video-player .custom-controls .progress-bar {
+    width: 60%;
+}
+
+.video-player .custom-controls .volume-bar {
+    width: 30%;
+}
+
+.video-player video {
+    width: 100%;
+    height: auto;
+}
+
+.video-selector {
+    height: 100%;
+    width: auto;
+    border-style: solid;
+    border-color: tomato;
+}
+
+.to-video-scroll {
+    width: 100%;
+    height: 100px;
+}
