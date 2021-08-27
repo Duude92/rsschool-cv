@@ -20,9 +20,9 @@
                     <button class="play play-control"><i class="fas fa-play"></i></button>
                     <button class="previous"><i class="fas fa-backward"></i></button>
                     <button class="next"><i class="fas fa-forward"></i></button>
-                    <input type="range" name="progressBar" id="progressBar" class="progress-bar" min="0" max="1" value="0" onchange="setVideoTime(this.value)">
+                    <input type="range" name="progressBar" id="progressBar" class="progress-bar" min="0" max="1" value="0" onchange="setVideoTime(this.value)" oninput="setVideoProgress(this.value)">
                     <button class="mute"><i class="fas fa-volume-up"></i></button>
-                    <input type="range" name="volume" id="volume" class="volume-bar" id="volumeBar" min="0" max="1" value="1" step="0.01" onchange="setVolume(this.value)">
+                    <input type="range" name="volume" id="volume" class="volume-bar" id="volumeBar" min="0" max="1" value="1" step="0.01" onchange="setVolume(this.value)" oninput="setVolume(this.value)">
                     <button class="fullscreen"><i class="fas fa-expand"></i></button>
                 </div>
             </div>

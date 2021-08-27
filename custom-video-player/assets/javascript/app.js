@@ -7,6 +7,7 @@ const progressBar = document.getElementById('progressBar')
 const volumeBar = document.getElementById('volumeBar')
 const fullscreen = document.querySelector('.fullscreen')
 const videoPlayer = document.querySelector('.video-player')
+const muteButton = document.querySelector('.mute')
 let cards = []
 let videoTime = 0
 let isProgressBarTouching = false
@@ -20,7 +21,6 @@ class VideoCard {
             currentVideo = this
             video.style.height = video.offsetHeight + 'px'
             video.src = this.videoUrl
-                // progressBar.max = video.duration
             setTimeout(_ => {
                 video.style = ''
             }, 1500)
@@ -28,6 +28,9 @@ class VideoCard {
         }
     }
 }
+muteButton.addEventListener('click', _ => {
+    setVolume(0)
+})
 progressBar.onmousedown = _ => {
     isProgressBarTouching = true
 }
@@ -42,11 +45,17 @@ fullscreen.addEventListener('click', _ => {
 })
 
 const setVolume = (value) => {
+    console.log(value)
     video.volume = value
+    document.documentElement.style.setProperty('--volume-position', (value * 100) + '%')
+
+}
+const setVideoProgress = (value) => {
+    document.documentElement.style.setProperty('--progress-position', (value / video.duration * 100) + '%')
+
 }
 
 const setVideoTime = (value) => {
-    console.log(value)
     video.currentTime = value
 }
 
@@ -132,6 +141,8 @@ video.onended = _ => {
 
 video.ontimeupdate = (ev) => {
     if (!isProgressBarTouching) {
-        progressBar.value = video.currentTime
+        let currentTime = video.currentTime
+        progressBar.value = currentTime
+        document.documentElement.style.setProperty('--progress-position', (currentTime / video.duration * 100) + '%')
     }
 }
