@@ -13,8 +13,8 @@ let isProgressBarTouching = false
 let currentVideo
 class VideoCard {
     constructor(videoName) {
-        this.videoUrl = `./assets/video/${videoName}.mp4`
-        this.imageUrl = `./assets/images/${videoName}.jpg`
+        this.videoUrl = `assets/video/${videoName}.mp4`
+        this.imageUrl = `assets/images/${videoName}.jpg`
         this.title = videoName
         this.playVideo = _ => {
             currentVideo = this
@@ -44,6 +44,7 @@ fullscreen.addEventListener('click', _ => {
 const setVolume = (value) => {
     video.volume = value
 }
+
 const setVideoTime = (value) => {
     console.log(value)
     video.currentTime = value
@@ -61,28 +62,28 @@ const pauseVideo = () => {
         icon.classList.add('fa-play')
     })
 }
-const playVideo = () => {
-    console.log(video, video.duration)
-    progressBar.max = video.duration
-    playButtons.forEach(button => {
-        let icon = button.querySelector('i')
-        icon.classList.remove('fa-play')
-        icon.classList.add('fa-pause')
-    })
-    setTimeout(_ => {
-        let pAnim = playMain.animate({ opacity: 0 }, 1000)
-        let cAnim = controls.animate({ opacity: 0 }, 1000)
-        pAnim.onfinish = _ => {
-            playMain.classList.add('hide')
-            controls.classList.add('hide')
-        }
-    }, 1000)
-    video.play()
 
+const playVideo = () => {
+    video.load()
+    video.onloadedmetadata = _ => {
+        progressBar.max = video.duration
+        playButtons.forEach(button => {
+            let icon = button.querySelector('i')
+            icon.classList.remove('fa-play')
+            icon.classList.add('fa-pause')
+        })
+        setTimeout(_ => {
+            let pAnim = playMain.animate({ opacity: 0 }, 1000)
+            let cAnim = controls.animate({ opacity: 0 }, 1000)
+            pAnim.onfinish = _ => {
+                playMain.classList.add('hide')
+                controls.classList.add('hide')
+            }
+        }, 1000)
+        video.play()
+    }
 
 }
-
-
 
 addCard(new VideoCard('Ocean'))
 addCard(new VideoCard('Rock_Balance'))
@@ -128,10 +129,9 @@ video.onended = _ => {
         cards[index + 1].playVideo()
     }
 }
-pauseVideo
+
 video.ontimeupdate = (ev) => {
     if (!isProgressBarTouching) {
         progressBar.value = video.currentTime
     }
-    console.log(videoTime, video.currentTime)
 }
