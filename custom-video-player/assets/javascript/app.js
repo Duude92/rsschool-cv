@@ -4,7 +4,7 @@ const playButtons = document.querySelectorAll('.play')
 const playMain = document.querySelector('.play-main')
 const controls = document.querySelector('.custom-controls')
 const progressBar = document.getElementById('progressBar')
-const volumeBar = document.getElementById('volumeBar')
+const volumeBar = document.getElementById('volume')
 const fullscreen = document.querySelector('.fullscreen')
 const videoPlayer = document.querySelector('.video-player')
 const muteButton = document.querySelector('.mute')
@@ -15,6 +15,7 @@ let playlist = []
 let videoTime = 0
 let isProgressBarTouching = false
 let currentVideo
+let lastVolume = 100
 class VideoCard {
     constructor(videoName) {
         this.videoUrl = `assets/video/${videoName}.mp4`
@@ -37,7 +38,14 @@ class VideoCard {
 
 }
 muteButton.addEventListener('click', _ => {
-    setVolume(0)
+    if (video.muted) {
+        video.muted = false
+        setVolume(lastVolume)
+    } else {
+        lastVolume = volumeBar.value
+        video.muted = true
+        setVolume(0)
+    }
 })
 progressBar.onmousedown = _ => {
     isProgressBarTouching = true
@@ -46,11 +54,30 @@ progressBar.onmouseup = _ => {
     isProgressBarTouching = false
 }
 
-fullscreen.addEventListener('click', _ => {
-    videoPlayer.requestFullscreen()
 
-    console.log(video.controls)
+document.onfullscreenchange = _ => {
+    let icon = fullscreen.querySelector('i')
+    if (document.fullscreenElement) {
+        icon.classList.remove('fa-expand')
+        icon.classList.add('fa-compress')
+        videoPlayer.requestFullscreen()
+    } else {
+        icon.classList.add('fa-expand')
+        icon.classList.remove('fa-compress')
+        document.exitFullscreen()
+    }
+}
+fullscreen.addEventListener('click', _ => {
+    let icon = fullscreen.querySelector('i')
+    if (!document.fullscreenElement) {
+        videoPlayer.requestFullscreen()
+    } else {
+        document.exitFullscreen()
+    }
 })
+document.onkeypress = (key) => {
+    console.log(key)
+}
 nextButton.addEventListener('click', _ => {
     nextVideo()
 })
@@ -59,7 +86,9 @@ prevButton.addEventListener('click', _ => {
 })
 
 const setVolume = (value) => {
-    console.log(value)
+    if (video.muted && value !== 0) {
+        video.muted = false
+    }
     video.volume = value
     document.documentElement.style.setProperty('--volume-position', (value * 100) + '%')
 
@@ -170,7 +199,7 @@ video.onended = _ => {
     if (index + 1 === playlist.length) {
         pauseVideo()
     } else {
-        playlist[index + 1].playVideo()
+        nextVideo()
     }
 }
 
