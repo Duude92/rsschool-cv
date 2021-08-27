@@ -8,7 +8,10 @@ const volumeBar = document.getElementById('volumeBar')
 const fullscreen = document.querySelector('.fullscreen')
 const videoPlayer = document.querySelector('.video-player')
 const muteButton = document.querySelector('.mute')
-let cards = []
+const nextButton = document.querySelector('.next')
+const prevButton = document.querySelector('.previous')
+
+let playlist = []
 let videoTime = 0
 let isProgressBarTouching = false
 let currentVideo
@@ -17,16 +20,21 @@ class VideoCard {
         this.videoUrl = `assets/video/${videoName}.mp4`
         this.imageUrl = `assets/images/${videoName}.jpg`
         this.title = videoName
-        this.playVideo = _ => {
-            currentVideo = this
-            video.style.height = video.offsetHeight + 'px'
-            video.src = this.videoUrl
-            setTimeout(_ => {
-                video.style = ''
-            }, 1500)
-            playVideo()
-        }
     }
+    playVideo = _ => {
+        video.style.height = video.offsetHeight + 'px'
+        this.setVideo()
+        setTimeout(_ => {
+            video.style = ''
+        }, 1500)
+        playVideo()
+    }
+    setVideo = _ => {
+        currentVideo = this
+        video.src = this.videoUrl
+        return this
+    }
+
 }
 muteButton.addEventListener('click', _ => {
     setVolume(0)
@@ -42,6 +50,12 @@ fullscreen.addEventListener('click', _ => {
     videoPlayer.requestFullscreen()
 
     console.log(video.controls)
+})
+nextButton.addEventListener('click', _ => {
+    nextVideo()
+})
+prevButton.addEventListener('click', _ => {
+    previousVideo()
 })
 
 const setVolume = (value) => {
@@ -60,7 +74,7 @@ const setVideoTime = (value) => {
 }
 
 const addCard = (card) => {
-    cards.push(card)
+    playlist.push(card)
 }
 
 const pauseVideo = () => {
@@ -93,11 +107,32 @@ const playVideo = () => {
     }
 
 }
+const nextVideo = _ => {
+    let index = playlist.indexOf(currentVideo)
+    if (playlist.length - 1 <= index) {
+        pauseVideo()
+    } else {
+        playlist[index + 1].playVideo()
+    }
+}
+const previousVideo = _ => {
+    let index = playlist.indexOf(currentVideo)
+    if (!index) {
+        pauseVideo()
+    } else {
+        playlist[index - 1].playVideo()
+    }
+}
 
-addCard(new VideoCard('Ocean'))
+addCard(new VideoCard('Ocean').setVideo())
 addCard(new VideoCard('Rock_Balance'))
+addCard(new VideoCard('Fire'))
+addCard(new VideoCard('Ducks'))
 
-cards.forEach(card => {
+//Комментарий к вопросу о карточках
+console.log("https://discord.com/channels/516715744646660106/861528325087035422/880751260838535179")
+
+playlist.forEach(card => {
     let cardImage = new Image(200, 100)
     cardImage.src = card.imageUrl
     let container = document.createElement('div')
@@ -131,11 +166,11 @@ video.onmousemove = _ => {
     controls.classList.remove('hide')
 }
 video.onended = _ => {
-    let index = cards.indexOf(currentVideo)
-    if (index + 1 === cards.length) {
+    let index = playlist.indexOf(currentVideo)
+    if (index + 1 === playlist.length) {
         pauseVideo()
     } else {
-        cards[index + 1].playVideo()
+        playlist[index + 1].playVideo()
     }
 }
 
