@@ -180,7 +180,29 @@ const previousVideo = _ => {
     }
 }
 
+const playlistUpdate = () => {
+    while (videoSelector.firstChild) {
+        videoSelector.removeChild(videoSelector.firstChild)
+    }
+    playlist.forEach(card => {
+        let cardImage = new Image(200, 100)
+        cardImage.src = card.imageUrl
+        let container = document.createElement('div')
+        container.className = 'card-video'
+        videoSelector.appendChild(container)
 
+
+        let p = document.createElement('p')
+        p.innerText = card.title
+        container.appendChild(cardImage)
+        container.appendChild(p)
+        let selector = document.createElement('div')
+        selector.className = 'video-card-selector'
+        container.appendChild(selector)
+
+        container.addEventListener('click', _ => card.playVideo())
+    })
+}
 
 let xmlObj = new XMLHttpRequest()
 xmlObj.overrideMimeType("application/json");
@@ -193,37 +215,18 @@ xmlObj.onreadystatechange = _ => {
             fileNameList.forEach(fileName => {
                 let card = new VideoCard(fileName)
                 cards.push(card)
-                console.log(card)
-
             })
         }
 
         //hardcode
-        console.log(cards)
         playlist.push(cards[0])
         playlist.push(cards[1])
         playlist.push(cards[2])
-        playlist.push(cards[3])
         playlist[0].setVideo()
 
-        playlist.forEach(card => {
-            let cardImage = new Image(200, 100)
-            cardImage.src = card.imageUrl
-            let container = document.createElement('div')
-            container.className = 'card-video'
-            videoSelector.appendChild(container)
 
+        playlistUpdate()
 
-            let p = document.createElement('p')
-            p.innerText = card.title
-            container.appendChild(cardImage)
-            container.appendChild(p)
-            let selector = document.createElement('div')
-            selector.className = 'video-card-selector'
-            container.appendChild(selector)
-
-            container.addEventListener('click', _ => card.playVideo())
-        })
         let videosContainer = document.querySelector('.videos-container')
 
         cards.forEach(card => {
@@ -238,6 +241,11 @@ xmlObj.onreadystatechange = _ => {
             selector.className = 'video-card-selector'
             cardContainer.appendChild(selector)
             cardContainer.className = 'container-card-video'
+            cardContainer.addEventListener('click', _ => {
+                card.setVideo()
+                playlist = [card]
+                playlistUpdate()
+            })
 
             videosContainer.append(cardContainer)
         })
@@ -245,13 +253,6 @@ xmlObj.onreadystatechange = _ => {
     }
 }
 xmlObj.send(null)
-
-
-
-// addCard(new VideoCard('Ocean').setVideo())
-// addCard(new VideoCard('Rock_Balance'))
-// addCard(new VideoCard('Fire'))
-// addCard(new VideoCard('Ducks'))
 
 //Комментарий к вопросу о карточках
 console.log("https://discord.com/channels/516715744646660106/861528325087035422/880751260838535179")
@@ -284,7 +285,6 @@ video.onended = _ => {
 video.ontimeupdate = (ev) => {
     if (!isProgressBarTouching) {
         let currentTime = video.currentTime
-        console.log(video.currentTime, video.duration)
 
         if (isNaN(video.duration)) {
             document.documentElement.style.setProperty('--progress-position', '0%')
@@ -292,6 +292,5 @@ video.ontimeupdate = (ev) => {
         }
         progressBar.value = currentTime
         document.documentElement.style.setProperty('--progress-position', (currentTime / video.duration * 100) + '%')
-        console.log(1)
     }
 }
