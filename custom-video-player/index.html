@@ -12,6 +12,8 @@
 
 <body>
     <main>
+        <input id="file-input" type="file" name="name" style="display: none;" multiple oninput="selectFiles(this.files)">
+        <button class="select-files" style="display: none;">Select videos</button>
         <div class="video-player-container">
             <div class="video-player">
                 <button class="play play-main"><i class="fas fa-play"></i></button>
@@ -30,9 +32,9 @@
 
             </div>
         </div>
-        <button class="to-video-scroll"></button>
+        <!-- <button class="to-video-scroll"></button> -->
 
-        <div class="video-search-container">
+        <div class="videos-container">
 
         </div>
     </main>

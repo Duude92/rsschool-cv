@@ -8,6 +8,12 @@ body {
     margin: 0;
 }
 
+.select-files {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+}
+
 .hide {
     display: none !important;
 }
@@ -147,4 +153,19 @@ input[type=range]::-webkit-slider-thumb {
     height: 100%;
     background-color: white;
     opacity: 0;
+}
+
+.videos-container {
+    margin-top: 100px;
+    width: 90vw;
+    height: 1000px;
+    margin: 0 auto;
+    border-style: solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-card-video {
+    position: relative;
 }
