@@ -65,7 +65,7 @@ const selectFiles = (data) => {
     a.remove();
     console.log(serializedArray)
 }
-muteButton.addEventListener('click', _ => {
+const mute = _ => {
     if (video.muted) {
         video.muted = false
         setVolume(lastVolume)
@@ -74,6 +74,9 @@ muteButton.addEventListener('click', _ => {
         video.muted = true
         setVolume(0)
     }
+}
+muteButton.addEventListener('click', _ => {
+    mute()
 })
 progressBar.onmousedown = _ => {
     isProgressBarTouching = true
@@ -88,11 +91,9 @@ document.onfullscreenchange = _ => {
     if (document.fullscreenElement) {
         icon.classList.remove('fa-expand')
         icon.classList.add('fa-compress')
-        videoPlayer.requestFullscreen()
     } else {
         icon.classList.add('fa-expand')
         icon.classList.remove('fa-compress')
-        document.exitFullscreen()
     }
 }
 fullscreen.addEventListener('click', _ => {
@@ -104,6 +105,29 @@ fullscreen.addEventListener('click', _ => {
     }
 })
 document.onkeypress = (key) => {
+    switch (key.code) {
+        case "KeyF":
+            if (!document.fullscreenElement) {
+                videoPlayer.requestFullscreen()
+            } else {
+                document.exitFullscreen()
+            }
+            break;
+        case "KeyM":
+            mute()
+            break;
+        case "Space":
+            if (!video.paused) {
+                pauseVideo()
+            } else {
+                //FIXME: if video not played
+                playVideo()
+            }
+            break;
+
+        default:
+            break;
+    }
     console.log(key)
 }
 nextButton.addEventListener('click', _ => {
