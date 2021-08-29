@@ -11,6 +11,8 @@ const muteButton = document.querySelector('.mute')
 const nextButton = document.querySelector('.next')
 const prevButton = document.querySelector('.previous')
 const selectFilesButton = document.querySelector('.select-files')
+const videoTitle = document.getElementById('videoTitle')
+const videoDescription = document.getElementById('videoDescription')
 
 let playlist = []
 let videoTime = 0
@@ -24,6 +26,7 @@ class VideoCard {
         this.videoUrl = `assets/video/${videoName}.mp4`
         this.imageUrl = `assets/images/${videoName}.jpg`
         this.title = videoName
+        this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
     playVideo = _ => {
         video.style.height = video.offsetHeight + 'px'
@@ -34,6 +37,8 @@ class VideoCard {
         playVideo()
     }
     setVideo = _ => {
+        videoTitle.innerText = this.title
+        videoDescription.innerText = this.description
         document.documentElement.style.setProperty('--progress-position', '0%')
         currentVideo = this
         video.src = this.videoUrl
@@ -104,7 +109,7 @@ fullscreen.addEventListener('click', _ => {
         document.exitFullscreen()
     }
 })
-document.onkeypress = (key) => {
+videoPlayer.onkeypress = (key) => {
     switch (key.code) {
         case "KeyF":
             if (!document.fullscreenElement) {
