@@ -260,8 +260,19 @@ xmlObj.onreadystatechange = _ => {
 
         cards.forEach(card => {
             let cardContainer = document.createElement('div')
-            let imageContainer = new Image(400, 250)
-            imageContainer.src = card.imageUrl
+            let image = new Image(400, 250)
+            image.src = card.imageUrl
+            let imageContainer = document.createElement('div')
+            imageContainer.appendChild(image)
+            let plusContainer = document.createElement('div')
+            plusContainer.className = 'add-playlist'
+            plusContainer.innerHTML = `<i class="fas fa-plus"></i>`
+
+            plusContainer.addEventListener('click', _ => {
+                addCard(card)
+                playlistUpdate()
+            })
+            imageContainer.appendChild(plusContainer)
             cardContainer.append(imageContainer)
             let p = document.createElement('p')
             p.innerText = card.title
@@ -270,13 +281,25 @@ xmlObj.onreadystatechange = _ => {
             selector.className = 'video-card-selector'
             cardContainer.appendChild(selector)
             cardContainer.className = 'container-card-video'
-            cardContainer.addEventListener('click', _ => {
+            const setCurrentVideo = _ => {
                 card.setVideo()
                 playlist = [card]
                 playlistUpdate()
-            })
+            }
+
+
+            cardContainer.onclick = setCurrentVideo
+            plusContainer.onmouseover = _ => {
+                cardContainer.onclick = null
+            }
+            plusContainer.onmouseleave = _ => {
+                cardContainer.onclick = setCurrentVideo
+            }
 
             videosContainer.append(cardContainer)
+            plusContainer.style.top = image.offsetHeight
+            plusContainer.style.left = image.offsetWidth
+
         })
 
     }
