@@ -72,10 +72,15 @@ const selectFiles = (data) => {
     console.log(serializedArray)
 }
 const mute = _ => {
+    let innerButton = muteButton.querySelector('i')
     if (video.muted) {
+        innerButton.classList.remove('fa-volume-mute')
+        innerButton.classList.add('fa-volume-up')
         video.muted = false
         setVolume(lastVolume)
     } else {
+        innerButton.classList.remove('fa-volume-up')
+        innerButton.classList.add('fa-volume-mute')
         lastVolume = volumeBar.value
         video.muted = true
         setVolume(0)
