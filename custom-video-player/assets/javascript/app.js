@@ -21,6 +21,7 @@ let currentVideo
 let lastVolume = 100
 let fileNameList = []
 let cards = []
+let playListIndex = 0
 class VideoCard {
     constructor(videoName) {
         this.videoUrl = `assets/video/${videoName}.mp4`
@@ -109,7 +110,7 @@ fullscreen.addEventListener('click', _ => {
         document.exitFullscreen()
     }
 })
-videoPlayer.onkeypress = (key) => {
+window.onkeypress = (key) => {
     switch (key.code) {
         case "KeyF":
             if (!document.fullscreenElement) {
@@ -122,18 +123,30 @@ videoPlayer.onkeypress = (key) => {
             mute()
             break;
         case "Space":
+            if (document.activeElement === playMain) {
+                return
+            }
+            if ((key.target == document.body) || (key.target == playMain)) {
+                key.preventDefault()
+            }
             if (!video.paused) {
                 pauseVideo()
             } else {
-                //FIXME: if video not played
                 playVideo()
             }
+            break;
+        case "Period":
+            if (video.playbackRate < 15.5)
+                video.playbackRate += 0.1
+            break;
+        case "Comma":
+            if (video.playbackRate > 0.15)
+                video.playbackRate -= 0.1
             break;
 
         default:
             break;
     }
-    console.log(key)
 }
 nextButton.addEventListener('click', _ => {
     nextVideo()
@@ -170,6 +183,19 @@ const pauseVideo = () => {
         icon.classList.add('fa-play')
     })
 }
+video.onmouseleave = _ => {
+    if (video.played.length > 0) {
+        setTimeout(_ => {
+            let pAnim = playMain.animate({ opacity: 0 }, 2000)
+            let cAnim = controls.animate({ opacity: 0 }, 2000)
+            pAnim.onfinish = _ => {
+                playMain.classList.add('hide')
+                controls.classList.add('hide')
+                document.body.style.cursor = 'none'
+            }
+        }, 1000)
+    }
+}
 
 const playVideo = () => {
     video.load()
@@ -180,32 +206,25 @@ const playVideo = () => {
             icon.classList.remove('fa-play')
             icon.classList.add('fa-pause')
         })
-        setTimeout(_ => {
-            let pAnim = playMain.animate({ opacity: 0 }, 1000)
-            let cAnim = controls.animate({ opacity: 0 }, 1000)
-            pAnim.onfinish = _ => {
-                playMain.classList.add('hide')
-                controls.classList.add('hide')
-            }
-        }, 1000)
+
         video.play()
     }
 
 }
 const nextVideo = _ => {
-    let index = playlist.indexOf(currentVideo)
-    if (playlist.length - 1 <= index) {
+    if (playlist.length - 1 <= playListIndex) {
         pauseVideo()
     } else {
-        playlist[index + 1].playVideo()
+        playlist[playListIndex + 1].playVideo()
+        playListIndex++
     }
 }
 const previousVideo = _ => {
-    let index = playlist.indexOf(currentVideo)
-    if (!index) {
+    if (!playListIndex) {
         pauseVideo()
     } else {
-        playlist[index - 1].playVideo()
+        playlist[playListIndex - 1].playVideo()
+        playListIndex--
     }
 }
 
@@ -284,6 +303,7 @@ xmlObj.onreadystatechange = _ => {
             const setCurrentVideo = _ => {
                 card.setVideo()
                 playlist = [card]
+                playListIndex = 0
                 playlistUpdate()
             }
 
@@ -325,13 +345,11 @@ video.onmousemove = _ => {
     playMain.classList.remove('hide')
     controls.classList.remove('hide')
 }
+window.onmousemove = _ => {
+    document.body.style.cursor = 'initial'
+}
 video.onended = _ => {
-    let index = playlist.indexOf(currentVideo)
-    if (index + 1 === playlist.length) {
-        pauseVideo()
-    } else {
-        nextVideo()
-    }
+    nextVideo()
 }
 
 video.ontimeupdate = (ev) => {

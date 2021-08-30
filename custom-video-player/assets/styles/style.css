@@ -148,6 +148,10 @@ input[type=range]::-webkit-slider-thumb {
     width: 16px;
 }
 
+.video-player *:focus {
+    outline: none;
+}
+
 .video-player .custom-controls .progress-bar {
     width: 60%;
 }
