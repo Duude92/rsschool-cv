@@ -188,15 +188,19 @@ const pauseVideo = () => {
         icon.classList.add('fa-play')
     })
 }
+let fading = false
 video.onmouseleave = _ => {
     if (video.played.length > 0) {
         setTimeout(_ => {
-            let pAnim = playMain.animate({ opacity: 0 }, 2000)
-            let cAnim = controls.animate({ opacity: 0 }, 2000)
-            pAnim.onfinish = _ => {
-                playMain.classList.add('hide')
-                controls.classList.add('hide')
-                document.body.style.cursor = 'none'
+            fading = true
+            if (fading) {
+                let pAnim = playMain.animate({ opacity: 0 }, 2000)
+                let cAnim = controls.animate({ opacity: 0 }, 2000)
+                pAnim.onfinish = _ => {
+                    playMain.classList.add('hide')
+                    controls.classList.add('hide')
+                    document.body.style.cursor = 'none'
+                }
             }
         }, 1000)
     }
@@ -363,6 +367,7 @@ video.onmousemove = _ => {
 }
 window.onmousemove = _ => {
     document.body.style.cursor = 'initial'
+    fading = false
 }
 video.onended = _ => {
     nextVideo()
