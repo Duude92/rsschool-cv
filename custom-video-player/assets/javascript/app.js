@@ -27,7 +27,7 @@ class VideoCard {
         this.videoUrl = `assets/video/${videoName}.mp4`
         this.imageUrl = `assets/images/${videoName}.jpg`
         this.title = videoName
-        this.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        this.description = `Desctription for: ${this.title}\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
     }
     playVideo = _ => {
         video.style.height = video.offsetHeight + 'px'
@@ -347,7 +347,8 @@ https://discord.com/channels/516715744646660106/861528325087035422/8807512608385
     Перелистывание видео выполнено в виде плейлиста, есть возможность переключить на следующее видео, предыдущее, по окочанию текущего видео - плеер автоматически переключит.
     Подобие кинопоиска так же реализовать довольно трудоемко - tmdb из примера не имеет самих видео, найти бесплатный видео хостинг с доступным api мне не удалось, по этому решил залить несколько видео(см. ссылку выше) на выбор (а так же можно добавить в текущий плейлист), для бОльшего кол-ва видео необходимо использовать бд, но это уже не входит в рамки этой работы.
     В целом считаю 30 баллов заслуженными, хоть и дизайн у меня так себе - я не дизайнер :)
-Так же добавлено в целом на страницу вывод имени видео, а так же его описания (подготовлено в обьекте видео карточек, смысла его выполнять без бд - нет)`)
+Так же добавлено в целом на страницу вывод имени видео, а так же его описания (подготовлено в обьекте видео карточек, смысла его выполнять без бд - нет).
+P.S. Работу в основном делал функционально а не дизайнерски.`)
 
 
 
