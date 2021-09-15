@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #b9a496;
+    margin: 0;
+}
+
+body * {
+    font-family: 'Roboto';
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+}
+
+header {
+    margin-top: 3%;
+    background-color: #a87441;
+}
+
+header * {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    line-height: 50px;
+}
+
+aside {
+    margin: 0;
+    background-color: #352317;
+    width: 400px;
+    /* padding: 10px; */
+    color: wheat;
+}
+
+.education p {
+    margin-left: 20px;
+}
+
+.education p::before {
+    display: block;
+    content: '';
+    border-style: solid;
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+    border-width: 1px;
+    border-radius: 50%;
+    float: left;
+}
+
+aside p {
+    margin: 0;
+}
+
+aside a {
+    text-decoration: none;
+    display: block;
+    color: wheat;
+    transition: background-color 1s;
+    margin-top: 5px;
+    padding: 10px 0px 10px 20px
+}
+
+aside a:hover {
+    background-color: #1f7171;
+}
+
+aside article {
+    padding: 10px;
+}
+
+.photo-container {
+    height: auto;
+}
+
+.photo-container img {
+    width: 100%;
+    height: auto;
+}
+
+.skills li {
+    margin-top: 10px;
+}
+
+.skills ul li:first-child {
+    margin-top: 20px;
+}
+
+main {
+    display: flex;
+    margin: 0;
+}
+
+.content {
+    background-color: blanchedalmond;
+    width: 100%;
+    padding: 20px;
+}
+
+.about {
+    padding-top: 10px;
+    min-height: 1000px;
+}
+
+main h2 {
+    margin: 0;
+    margin: 0, 10px;
+    border-bottom: rgb(94, 94, 94);
+    border-bottom-style: solid;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+aside h2 {
+    margin-top: 10px;
+}
