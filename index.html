@@ -12,8 +12,14 @@
 <body>
     <div class="container">
         <nav>
+            <input type="checkbox" name="burgerOpen" id="burgerOpen">
+            <label class="menu-button" for="burgerOpen"><span></span></label>
             <ul>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#example">Code example</a></li>
             </ul>
         </nav>
         <header>
@@ -32,19 +38,19 @@
                         <p>Master in Computer Engineering</p>
                     </div>
                     <h2 id='contacts'>Contacts</h2>
-                    <p><a href="https://discord.com/users/301750798168358916">Discord</a></p>
-                    <p><a href="mailto:switch4acc@gmail.com">Mail</a></p>
+                    <p><a href="https://discord.com/users/301750798168358916" class='discord'>Discord</a></p>
+                    <p><a href="mailto:switch4acc@gmail.com" class='gmail'>Mail</a></p>
                     <div class="skills">
                         <h2 id='skills'>Skills</h2>
                         <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>GitHub</li>
-                            <li>C#</li>
-                            <li>Python</li>
-                            <li>C++</li>
-                            <li>Rust</li>
+                            <li class='html'>HTML</li>
+                            <li class='css'>CSS</li>
+                            <li class='js'>JavaScript</li>
+                            <li class='gh'>GitHub</li>
+                            <li class='cs'>C#</li>
+                            <li class='py'>Python</li>
+                            <li class='cpp'>C++</li>
+                            <li class='r'>Rust</li>
                         </ul>
                     </div>
                 </article>
@@ -55,8 +61,30 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     <h2>Code example</h2>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <pre>
+    class VideoCard {
+        constructor(videoName) {
+            this.videoUrl = `assets/video/${videoName}.mp4`
+            this.imageUrl = `assets/images/${videoName}.jpg`
+            this.title = videoName
+        }
+        playVideo = _ => {
+            video.style.height = video.offsetHeight + 'px'
+            this.setVideo()
+            setTimeout(_ => {
+                video.style = ''
+            }, 1500)
+            playVideo()
+        }
+        setVideo = _ => {
+            videoTitle.innerText = this.title
+            videoDescription.innerText = this.description
+            currentVideo = this
+            video.src = this.videoUrl
+            return this
+        }
+    }
+                    </pre>
                 </div>
             </div>
         </main>
