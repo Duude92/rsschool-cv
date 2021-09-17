@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+:root {
+    --marker-join-line-left: 23px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -19,9 +24,8 @@ main * {
 }
 
 .container {
-    max-width: 1440px;
     margin: 0 auto;
-    width: calc(100% - 40px);
+    width: 65vw;
 }
 
 header * {
@@ -31,11 +35,16 @@ header * {
     line-height: calc(100vw/20);
 }
 
+footer {
+    clear: both;
+    background-color: rgb(48, 48, 48);
+    min-height: 50px;
+}
+
 aside {
     margin: 0;
     background-color: #333134;
-    max-width: 250px;
-    /* padding: 10px; */
+    max-width: 25%;
     color: #fff;
     float: left;
 }
@@ -56,6 +65,10 @@ aside {
     float: left;
 }
 
+.education>ul {
+    padding-inline-start: 10%;
+}
+
 aside p {
     margin: 0;
 }
@@ -65,13 +78,12 @@ aside a {
     display: block;
     color: wheat;
     transition: background-color 1s;
-    margin-top: 5px;
-    margin-left: 5px;
-    padding-left: calc(100vw/40);
+    margin-top: .5vw;
+    margin-left: .5vw;
+    padding-left: .3vw;
     padding-right: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    /* padding: 10px 0px 10px 20px */
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 aside a:hover {
@@ -84,6 +96,7 @@ aside article {
 
 .photo-container {
     height: auto;
+    width: 100%;
 }
 
 .photo-container img {
@@ -92,20 +105,39 @@ aside article {
     height: auto;
 }
 
-.skills ul {
-    list-style-type: none;
-    padding-left: calc(100vw/40);
+.skills-container {
+    position: relative;
 }
 
-li::before,
+.skills-container>span {
+    display: block;
+    content: '';
+    height: 90%;
+    width: 2px;
+    background-color: #fff;
+    position: absolute;
+    /* margin-left: calc((100vw/40) - 17px); */
+    left: var(--marker-join-line-left);
+    z-index: 1000;
+    top: 15px;
+    bottom: -15px;
+}
+
+.skills ul {
+    padding-left: 10%;
+    /* list-style-type: none; */
+    /* padding-left: calc(100vw/40); */
+}
+
+.skills-container>ul>li::before,
 article>p>a:before {
     content: '';
     display: block;
-    width: calc(100vw/40);
-    height: calc(100vw/40);
+    width: 2.2vw;
+    height: 2.2vw;
     float: left;
     background-size: 100%;
-    margin-right: 10px;
+    margin-right: 1vw;
 }
 
 .gmail:before {
@@ -149,40 +181,61 @@ article>p>a:before {
 }
 
 .skills li {
-    margin-top: 10px;
+    margin-top: 1vw;
 }
 
 .skills ul li:first-child {
-    margin-top: 20px;
+    margin-top: 4vw;
 }
 
 main {
     display: flex;
     margin: 0;
+    position: relative;
 }
 
 .content {
     background-color: #fff;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 2.3vw;
+    padding-top: .5vw;
 }
 
 .about {
-    padding-top: 10px;
     overflow: hidden;
     /* min-height: 1000px; */
 }
 
+.about>p {
+    text-align: justify;
+}
+
 main h2 {
     margin: 0;
-    margin: 0, 10px;
-    border-bottom: rgb(94, 94, 94);
-    border-bottom-style: solid;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    /* line-height: 5vw; */
+}
+
+main h2::after {
+    background-color: rgb(94, 94, 94);
+    content: '';
+    margin-top: 1.5vw;
+    left: 10%;
+    width: 80%;
+    height: 0.2vw;
+    position: absolute;
+    display: block;
 }
 
 .about h2 {
     text-align: center;
+}
+
+.about p,
+.about pre {
+    font-size: 1vw;
 }
 
 nav {
@@ -260,27 +313,28 @@ nav input:checked~.menu-button>span::after {
 /*adaptation settings*/
 
 h3 {
-    font-size: calc(100vw/75);
+    font-size: 1.7vw;
+}
+
+h4 {
+    font-size: 1.1vw;
+    line-height: 1vw;
 }
 
 h2.title {
     text-align: center;
-    letter-spacing: 10px;
+    letter-spacing: .4vw;
 }
 
 h2 {
-    font-size: calc(100vw/30);
+    font-size: 2.3vw;
     line-height: 20px;
-}
-
-header h2 {
-    font-size: calc(100vw/30);
-    letter-spacing: normal;
+    font-family: 'Oswald';
 }
 
 h1 {
-    font-size: calc(100vw/30);
-    line-height: 50px;
+    font-size: 3vw;
+    line-height: 3vw;
     font-weight: 500;
 }
 
@@ -289,7 +343,7 @@ aside li,
 aside p,
 pre,
 .about {
-    font-size: calc(100vw/70);
+    font-size: 1.5vw;
 }
 
 @media (max-width: 880px) {
@@ -304,14 +358,10 @@ pre,
         visibility: hidden;
     }
     header * {
-        line-height: calc(100vw/15);
-        ;
+        line-height: 4vw;
     }
     .menu-button {
         display: flex;
-    }
-    .skills ul {
-        padding: 0;
     }
     aside a {
         padding-left: 0;
