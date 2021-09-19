@@ -276,7 +276,8 @@ main h2::after {
 }
 
 .about p,
-.about pre {
+.about pre,
+.about ul {
     font-size: 1vw;
 }
 
