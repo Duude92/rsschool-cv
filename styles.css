@@ -280,6 +280,13 @@ main h2::after {
     font-size: 1vw;
 }
 
+.about pre {
+    border-style: solid;
+    border-color: #494949;
+    border-top-width: .5vw;
+    border-bottom-width: .5vw;
+}
+
 nav {
     z-index: 100;
 }
