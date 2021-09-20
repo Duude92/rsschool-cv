@@ -111,7 +111,7 @@ class VideoCard {
         playVideo()
     }
     setVideo = _ => {
-        videoTitle.innerText = this.title
+        videoTitle.innerText = this.title 
         videoDescription.innerText = this.description
         currentVideo = this
         video.src = this.videoUrl
@@ -119,6 +119,27 @@ class VideoCard {
     }
 }</code>
                     </pre>
+                        <h2 id="projects">Projects</h2>
+                        <div class="projects-container">
+                            <div class="project">
+                                <input type="checkbox" id="project1" class="project-input">
+                                <label for="project1"><div class="full"><img src="assets/images/museum.png" alt="museum project" srcset=""></div><img src="assets/images/museum.png" alt="museum project" srcset=""></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://duude92-museum.netlify.app/" target="_blank">Museum</a>
+                            </div>
+                            <div class="project">
+                                <input type="checkbox" id="project2" class="project-input">
+                                <label for="project2"><div class="full"><img src="assets/images/customvideo.png" alt="customvideo project" srcset=""></div><img src="assets/images/customvideo.png" alt="customvideo project" srcset=""></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://duude92-customvideo.netlify.app/" target="_blank">Custom-video</a>
+                            </div>
+                            <div class="project">
+                                <input type="checkbox" id="project3" class="project-input">
+                                <label for="project3"><div class="full"><img src="assets/images/verticalslider.png" alt="verticalslider project" srcset=""></div><img src="assets/images/verticalslider.png" alt="verticalslider project" srcset=""></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://verticalslider-duude92.netlify.app/" target="_blank">Vertical-slider</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
