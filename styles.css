@@ -360,6 +360,11 @@ nav input:checked~.menu-button>span::after {
     display: none;
 }
 
+.project>label>.full>img,
+.project>label>img {
+    cursor: pointer;
+}
+
 .project-input:checked~label>.full>img,
 .project-input:checked~.screen-blocker {
     display: block;
