@@ -71,7 +71,7 @@
         padding-left: 2vw;
     }
     
-    .education>ul {
+    aside ul {
         padding-inline-start: 10%;
     }
     
@@ -130,7 +130,7 @@
     }
     
     .skills ul {
-        padding-left: 10%;
+        /* padding-left: 10%; */
         /* list-style-type: none; */
         /* padding-left: calc(100vw/40); */
     }
