@@ -1,0 +1,1 @@
+console.log('Ссылка на пул-реквест: https://github.com/Duude92/rsschool-cv/pull/2, так же можно перейти через проекты')
