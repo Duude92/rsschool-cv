@@ -377,8 +377,8 @@ nav input:checked~.menu-button>span::after {
 
 .project img {
     object-fit: cover;
-    width: 10vw;
-    height: 10vw;
+    width: 7vw;
+    height: 7vw;
     border-style: solid;
     border-color: #282828;
     border-radius: 2px;
