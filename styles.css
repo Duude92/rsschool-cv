@@ -360,12 +360,12 @@ nav input:checked~.menu-button>span::after {
     display: none;
 }
 
-.project>label>.full>img,
+.project>label>.full,
 .project>label>img {
     cursor: pointer;
 }
 
-.project-input:checked~label>.full>img,
+.project-input:checked~label>.full,
 .project-input:checked~.screen-blocker {
     display: block;
 }
@@ -402,7 +402,7 @@ nav input:checked~.menu-button>span::after {
     z-index: 10000;
 }
 
-.full>img {
+img.full {
     display: none;
     position: fixed;
     top: 50%;
