@@ -6,7 +6,8 @@ body {
     width: 100%;
     margin: 0%;
 }
-.preload *{
+
+.preload * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
     -ms-transition: none !important;
@@ -21,13 +22,14 @@ body {
 }
 
 header {
-    padding-top: 50px;
+    padding-top: 53px;
     min-height: 60px;
 }
 
 .logo {
     display: block;
     margin-top: 7px;
+    padding-left: 5px;
     margin-bottom: 0px;
     background-image: url("assets/svg/logo.svg");
     background-repeat: no-repeat;
@@ -130,11 +132,11 @@ nav a:hover {
     background-image: url("assets/img/background.png");
     background-position: calc(50% + 351px) 100%;
     background-repeat: no-repeat;
-    min-height: 665px;
+    min-height: 696px;
 }
 
 .welcome-message {
-    padding-top: 105px;
+    padding-top: 113px;
 }
 
 .welcome .bgimage {
@@ -225,7 +227,7 @@ nav a:hover {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    row-gap: 77px;
+    row-gap: 73px;
     column-gap: 60px;
 }
 
@@ -241,7 +243,7 @@ nav a:hover {
 
 .cards-container .title {
     position: relative;
-    margin-top: 20px;
+    margin-top: 22px;
     margin-bottom: 0px;
     color: black;
     font-family: Forum;
@@ -255,7 +257,7 @@ nav a:hover {
 .cards-container .title::after {
     content: "";
     position: absolute;
-    bottom: -11px;
+    bottom: -12px;
     left: 0;
     transition: right 1s;
     right: 32%;
@@ -264,7 +266,7 @@ nav a:hover {
 }
 
 .cards-container .virtualtour {
-    margin-top: 21px;
+    margin-top: 22px;
     margin-bottom: 0px;
     position: relative;
     color: black;
@@ -322,7 +324,7 @@ nav a:hover {
 
 .video {
     padding-top: 90px;
-    min-height: 844px;
+    min-height: 1230px;
 }
 
 .video .video-player {
@@ -445,6 +447,14 @@ nav a:hover {
     letter-spacing: 0.15px;
     line-height: 40px;
     width: 91%;
+}
+
+.gallery {
+    min-height: 2051px;
+}
+
+.parallax {
+    min-height: 251px;
 }
 
 .tickets {
@@ -619,7 +629,6 @@ nav a:hover {
     font-size: 22px;
     display: block;
     cursor: pointer;
-
 }
 
 .ticket-type label:hover::before {
@@ -648,8 +657,8 @@ nav a:hover {
 }
 
 .contacts-description {
-    margin-top: 115px;
-    margin-bottom: 26px;
+    margin-top: 105px;
+    margin-bottom: 38px;
     line-height: 33px;
     position: relative;
     color: black;
@@ -662,7 +671,7 @@ nav a:hover {
 
 .contacts-address {
     margin-bottom: 0px;
-    line-height: 46px;
+    line-height: 51px;
     position: relative;
     color: black;
     font-family: Roboto;
