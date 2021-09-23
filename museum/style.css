@@ -149,6 +149,20 @@ nav a:hover {
     z-index: 100;
 }
 
+.slider-container {}
+
+.slides,
+.slide {
+    height: 750px;
+}
+
+.slide {
+    width: 1000px;
+    float: left;
+}
+
+.slides {}
+
 .gradient {
     position: absolute;
     width: 30%;
@@ -162,7 +176,8 @@ nav a:hover {
     width: 600px;
     left: 40%;
     height: 120px;
-    bottom: -55px
+    bottom: -55px;
+    z-index: 101;
 }
 
 .number {
