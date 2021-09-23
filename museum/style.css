@@ -129,14 +129,98 @@ nav a:hover {
 }
 
 .welcome {
-    background-image: url("assets/img/background.png");
+    /* background-image: url("assets/img/background.png");
     background-position: calc(50% + 351px) 100%;
+    background-repeat: no-repeat; */
+    min-height: 697px;
+}
+
+.welcome-left-content {
+    width: 50%;
+    position: absolute;
+    z-index: 101;
+}
+
+.welcome-right-content {
+    position: absolute;
+    /* left: 35%; */
+    right: 230px;
+    top: 150px;
+    z-index: 100;
+}
+
+.gradient {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+}
+
+.slider-controls {
+    position: absolute;
+    background-color: #000;
+    width: 600px;
+    left: 40%;
+    height: 120px;
+    bottom: -55px
+}
+
+.number {
+    color: #fff;
+    font-family: "Roboto";
+    width: 74px;
+    height: 100%;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    /* padding-top: 49px; */
+    line-height: 121px;
+    padding-left: 74px;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+}
+
+.number::after {
+    content: '';
+    position: absolute;
+    color: #fff;
+    border-left-style: solid;
+    width: 2px;
+    height: 20px;
+    margin-left: 35px;
+    margin-top: 52px;
+}
+
+.control-arrows {
+    height: 100%;
+    padding-top: 57px;
+    float: left;
+}
+
+.arrow {
+    display: block;
+    background-image: url('assets/svg/arrow-to-left.svg');
     background-repeat: no-repeat;
-    min-height: 696px;
+    height: 10px;
+    width: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+.arrow-right {
+    transform: scaleX(-1);
+}
+
+.slide-buttons {
+    width: 295px;
+    height: 100%;
+    float: left;
 }
 
 .welcome-message {
     padding-top: 113px;
+    line-height: 90px;
 }
 
 .welcome .bgimage {
@@ -147,7 +231,7 @@ nav a:hover {
 
 .welcome .welcomeundertext {
     position: relative;
-    padding-top: 27px;
+    padding-top: 23px;
     color: white;
     font-family: Roboto;
     font-style: normal;
@@ -186,6 +270,7 @@ nav a:hover {
 
 .visiting {
     min-height: 1000px;
+    padding-bottom: 74px;
 }
 
 .text-golden {
@@ -323,11 +408,12 @@ nav a:hover {
 }
 
 .video {
-    padding-top: 90px;
-    min-height: 1230px;
+    /* padding-top: 76px; */
+    min-height: 1247px;
 }
 
 .video .video-player {
+    padding-top: 76px;
     width: 100%;
     margin-bottom: 50px;
     vertical-align: middle;

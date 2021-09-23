@@ -36,12 +36,30 @@
     <main>
         <section class="section welcome dark" id="welcome">
             <div class="container welcome-container">
-                <h2 class="section-title text-white welcome-message">Welcome <br> to the Louvre</h2>
-                <div class="welcomeundertext">From the castle to the museum</div>
-                <!-- <input type="button" class="welcomebutton" value="Discover the Louvre"> -->
-                <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcomebutton">
-                    <p>Discover the Louvre</p>
-                </a>
+                <div class="welcome-left-content">
+                    <h2 class="section-title text-white welcome-message">Welcome <br> to the Louvre</h2>
+                    <div class="welcomeundertext">From the castle to the museum</div>
+                    <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="welcomebutton">
+                        <p>Discover the Louvre</p>
+                    </a>
+                </div>
+                <div class="welcome-right-content">
+                    <div class="slider-container">
+                        <div class="gradient"></div>
+                        <img src="assets/img/Welcome-slider/1.jpg" alt="1slider">
+                        <div class="slider-controls">
+                            <div class="number">
+                                <div class="actual-number">01</div>
+                                05
+                            </div>
+                            <div class="slide-buttons"></div>
+                            <div class="control-arrows">
+                                <div class="arrow arrow-left"></div>
+                                <div class="arrow arrow-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="section visiting" id="visiting">
@@ -94,14 +112,19 @@
         </section>
         <section class="section video" id="video">
             <div class="container">
+                <div class="flex">
+                    <h2 class="section-title text-golden title">Video journey</h2>
+                    <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
+                </div>
+
                 <div class="video-player">
                     <div class="video-player-content">
                         <button class="playbutton"></button>
                     </div>
                     <div class="video-control-panel flex">
-                        <button class="previous"></button>
+                        <!-- <button class="previous"></button> -->
                         <button class="playbutton"></button>
-                        <button class="next"></button>
+                        <!-- <button class="next"></button> -->
                         <input type="range" name="scrollbar" id="scrollbar" class="scrollbar">
                         <div class="volume">
                             <button class="volumebutton"></button>
@@ -111,10 +134,7 @@
 
                     </div>
                 </div>
-                <div class="flex">
-                    <h2 class="section-title text-golden title">Video journey</h2>
-                    <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
-                </div>
+
             </div>
         </section>
         <section class="section gallery dark" id="gallery">
