@@ -1,3 +1,7 @@
+:root {
+    --explore-pos: 400px
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -149,7 +153,9 @@ nav a:hover {
     z-index: 100;
 }
 
-.slider-container {}
+.slider-container {
+    transition: 1s;
+}
 
 .slides,
 .slide {
@@ -161,7 +167,16 @@ nav a:hover {
     float: left;
 }
 
-.slides {}
+.slider-wrapper {
+    width: 1000px;
+    height: 750px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    position: absolute;
+}
 
 .gradient {
     position: absolute;
@@ -392,9 +407,40 @@ nav a:hover {
     min-height: 713px;
 }
 
-.explore img {
+.explore-container {
+    position: relative;
     margin-top: 14px;
     padding-top: 0px;
+}
+
+.explore-container>.before {
+    background-image: url('assets/img/Explore/before.jpg');
+    width: 720px;
+    height: 700px;
+}
+
+.explore-container>.explore-after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url('assets/img/Explore/after.jpg');
+    width: var(--explore-pos);
+    height: 700px;
+}
+
+.explore-positioner {
+    position: absolute;
+    top: 0;
+    left: var(--explore-pos);
+    content: '';
+    height: 700px;
+    width: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.explore img {
     width: 50%;
     height: 50%;
 }
@@ -433,14 +479,15 @@ nav a:hover {
     margin-bottom: 50px;
     vertical-align: middle;
     display: table-cell;
+    position: relative;
 }
 
 .video-control-panel {
     width: 100%;
     min-height: 63px;
     background-color: black;
-    padding-top: 22px;
-    margin-bottom: 40px;
+    padding-top: 44px;
+    /* margin-bottom: 40px; */
 }
 
 .video-control-panel button {
@@ -548,6 +595,37 @@ nav a:hover {
     letter-spacing: 0.15px;
     line-height: 40px;
     width: 91%;
+}
+
+.video-slider-container {
+    height: 254px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-slider-control {
+    cursor: pointer;
+    height: 254px;
+    width: 452px;
+    position: absolute;
+    z-index: 101;
+}
+
+#video-right {
+    right: 0;
+}
+
+.video-slider {
+    margin-top: 40px;
+    height: 254px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.video-slider-container>iframe {
+    height: 254px;
+    width: 452px;
 }
 
 .gallery {
