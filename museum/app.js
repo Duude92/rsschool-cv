@@ -30,7 +30,7 @@ let videoButtonRight = document.getElementById("video-right")
 let galleryContainer = document.querySelector(".gallery-container")
 let sliding = false
 let isVideoSliding = false
-let slideNum = 0
+let slideNum = 1
 
 let slides = []
 slides.push(new slide('assets/img/Welcome-slider/1.jpg'))
@@ -93,11 +93,12 @@ let moveSlide = (direction) => {
         }
     }
     if (direction === 1) {
-        sliderContainer.style.left = ''
-        sliderContainer.append(sliderContainer.firstChild);
+        sliderContainer.style.left = '0px'
         let anim = sliderContainer.animate({ left: `-1000px` }, 500)
         anim.onfinish = _ => {
             sliderContainer.style.left = ''
+            sliderContainer.append(sliderContainer.firstChild);
+
             sliding = false
         }
     }
