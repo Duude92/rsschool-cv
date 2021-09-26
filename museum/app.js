@@ -51,28 +51,28 @@ videoSliderContainer.style.width = 0
 videos.forEach(v => v.Init(videoSliderContainer))
 
 let galleryImages = []
-for (let index = 1; index < 15; index++) {
+for (let index = 1; index <= 15; index++) {
     galleryImages.push(`assets/img/Gallery/galery${index}.jpg`)
 }
 galleryImages.sort(() => .5 - Math.random())
-for (let index = 0; index < 3; index++) {
-    const column = document.createElement('div')
-    column.className = 'column'
-    galleryContainer.append(column)
+    // for (let index = 0; index < 3; index++) {
+    //     const column = document.createElement('div')
+    //     column.className = 'column'
+    //     galleryContainer.append(column)
 
-    for (let index2 = 0; index2 < 5; index2++) {
-        let tempImage = new Image()
-        tempImage.src = galleryImages[index * 5 + index2]
-        column.append(tempImage)
+//     for (let index2 = 0; index2 < 5; index2++) {
+//         let tempImage = new Image()
+//         tempImage.src = galleryImages[index * 5 + index2]
+//         column.append(tempImage)
 
-    }
+//     }
 
-}
-// galleryImages.forEach(img => {
-//     let tempImage = new Image()
-//     tempImage.src = img
-//     galleryContainer.append(tempImage)
-// })
+// }
+galleryImages.forEach(img => {
+    let tempImage = new Image()
+    tempImage.src = img
+    galleryContainer.append(tempImage)
+})
 
 //---methods
 let moveSlide = (direction) => {
