@@ -18,13 +18,18 @@ class video {
     Init = (selector) => {
         selector.innerHTML += this.innerHTML
         selector.style.width = selector.offsetWidth + 486 + 'px';
+
+        let elem = document.createElement('div')
+        elem.className = "video-dot"
+        videoSliderDots.append(elem)
     }
 }
 let sliderContainer = document.querySelector(".slides")
 let leftArrow = document.querySelector(".arrow-left")
 let rightArrow = document.querySelector(".arrow-right")
 let currentSlide = document.querySelector(".actual-number")
-let videoSliderContainer = document.querySelector(".video-slider-container")
+const videoSliderContainer = document.querySelector(".video-slider-container")
+const videoSliderDots = document.querySelector(".video-slider-dots")
 let videoButtonLeft = document.getElementById("video-left")
 let videoButtonRight = document.getElementById("video-right")
 let galleryContainer = document.querySelector(".gallery-container")
