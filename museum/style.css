@@ -76,8 +76,12 @@
     }
     
     header nav ul {
+        padding: 0;
+        width: 775px;
         display: flex;
         margin-top: 11px;
+        right: 0;
+        justify-content: space-between;
     }
     
     header nav ul li {
@@ -85,7 +89,7 @@
     }
     
     nav a {
-        margin-left: 76px;
+        /* margin-left: 76px; */
         font-family: Roboto;
         font-style: normal;
         font-weight: 200;
@@ -268,7 +272,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 29px;
-        letter-spacing: 1.7px;
+        letter-spacing: 1.4px;
         text-decoration: none;
     }
     
@@ -390,6 +394,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 22px;
+        letter-spacing: -0.3px;
     }
     
     .cards-container .streetview {
@@ -401,6 +406,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
+        letter-spacing: -0.2px;
     }
     
     .explore {
@@ -452,16 +458,15 @@
         position: relative;
         font-family: Roboto;
         font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        letter-spacing: 1.06px;
+        font-weight: 100;
+        font-size: 22px;
+        letter-spacing: 0.2px;
         line-height: 39.3px;
         width: 91%;
     }
     
     .explore span {
         color: khaki;
-        letter-spacing: 1px;
     }
     
     .explore .explore-margin {
@@ -594,7 +599,7 @@
         position: relative;
         font-family: Roboto;
         font-style: normal;
-        font-weight: bolder;
+        font-weight: 100;
         font-size: 22px;
         letter-spacing: 0.15px;
         line-height: 40px;
@@ -1309,7 +1314,7 @@
     footer nav {
         max-height: 100px;
         margin-top: 0px;
-        margin-left: 0px;
+        margin-left: 100px;
         min-width: 555px;
     }
     
