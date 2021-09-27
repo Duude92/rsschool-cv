@@ -1614,5 +1614,5 @@
     footer>hr {
         margin-top: 22px;
         margin-bottom: 35px;
-        width: 100vw;
+        /* width: 100vw; */
     }
