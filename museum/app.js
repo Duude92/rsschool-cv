@@ -28,6 +28,9 @@ let videoSliderContainer = document.querySelector(".video-slider-container")
 let videoButtonLeft = document.getElementById("video-left")
 let videoButtonRight = document.getElementById("video-right")
 let galleryContainer = document.querySelector(".gallery-container")
+const buyButton = document.querySelector(".buy-button")
+const bookingPanel = document.querySelector(".booking")
+const paymentClose = document.querySelector(".payment-close")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
@@ -128,6 +131,8 @@ let moveVideo = (direction) => {
 }
 
 //---events
+buyButton.addEventListener('click', _ => bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0')
+paymentClose.addEventListener('click', _ => bookingPanel.animate({ left: '-110%' }, 500).onfinish = _ => bookingPanel.style = '')
 videoButtonLeft.addEventListener('click', _ => moveVideo(-1))
 videoButtonRight.addEventListener('click', _ => moveVideo(1))
 leftArrow.addEventListener('click', _ => moveSlide(-1))

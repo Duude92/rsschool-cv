@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/svg/favicon.svg">
+    <link rel="icon" href="assets/icon/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -208,8 +208,9 @@
                             </div>
                             <div class="booking">
                                 <div class="booking-container">
+                                    <div class="payment-close"></div>
                                     <div class="content">
-                                        <div class="panel left-panel">
+                                        <div class="left-panel">
                                             <div class="logo"></div>
                                             <div class="section-title text-golden visiting-heading">Booking tickets</div>
                                             <h3>Tour to Louvre</h3>
@@ -221,7 +222,53 @@
                                             <input type="text" id="phoneInput">
                                             <select id="ticketType"></select>
                                             <div class="entryTicket">
-                                                <h3 class="visiting-heading">Entry Ticket</h3>
+                                                <h3 class="">Entry Ticket</h3>
+                                                <h4>Basic 18+ (20 €)</h4>
+                                                <h4>Senior 65+ (10 €)</h4>
+                                            </div>
+                                        </div>
+                                        <div class="overview right-panel">
+                                            <h2>Overview</h2>
+                                            <p>Tour to Louvre</p>
+                                            <ul>
+                                                <li class="date">Friday, August 19</li>
+                                                <li class="time">16 : 30</li>
+                                                <li class="radio">Temporary exhibition</li>
+                                            </ul>
+                                            <div class="count">
+                                                <div class="count-line basic">
+                                                    <div class="count-text">Basic (20 €)</div>
+                                                    <div class="sum">0</div>&nbsp€
+                                                </div>
+                                                <div class="count-line senior">
+                                                    <div class="count-text">Senior (10 €)</div>
+                                                    <div class="sum">0</div>&nbsp€
+                                                </div>
+                                                <hr>
+                                                <div class="total-sum">
+                                                    <p class="total">Total:</p>
+                                                    <div class="total-sum">0</div>&nbsp€
+                                                </div>
+                                            </div>
+                                            <div class="payment">
+                                                <div class="top-card">
+                                                    <p>Card number</p>
+                                                    <input type="text" id="cardNumber" class="card-number">
+                                                    <p>Expiration date</p>
+                                                    <input type="number" id="cardDate" class="date" value="03">
+                                                    <input type="number" id="cardYear" class="year" value="2024">
+                                                    <p>Cardholder name</p>
+                                                    <input type="text" id="cardholder" class="cardholder">
+                                                </div>
+                                                <div class="bottom-card">
+                                                    <div class="black-slide"></div>
+                                                    <div class="left-card-block">
+                                                        <p>CVC/CVV</p>
+                                                        <input type="number" id="cardCvv" class="cvv">
+                                                        <p> The last<br> 3 or 4 digits<br> on back<br> of the card</p>
+                                                    </div>
+                                                </div>
+                                                <button class="book">Book</button>
                                             </div>
                                         </div>
                                     </div>
