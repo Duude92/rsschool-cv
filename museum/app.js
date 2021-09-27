@@ -8,6 +8,10 @@ class slide {
         container.style.backgroundImage = `url(${this.url})`
         selector.style.width = selector.offsetWidth + 1000 + 'px';
         selector.appendChild(container)
+
+        let tempElement = document.createElement('div')
+        tempElement.className = 'slide-button'
+        slideButtons.appendChild(tempElement)
     }
 }
 class video {
@@ -28,6 +32,7 @@ let sliderContainer = document.querySelector(".slides")
 let leftArrow = document.querySelector(".arrow-left")
 let rightArrow = document.querySelector(".arrow-right")
 let currentSlide = document.querySelector(".actual-number")
+let slideButtons = document.querySelector(".slide-buttons")
 const videoSliderContainer = document.querySelector(".video-slider-container")
 const videoSliderDots = document.querySelector(".video-slider-dots")
 let videoButtonLeft = document.getElementById("video-left")
@@ -36,6 +41,7 @@ let galleryContainer = document.querySelector(".gallery-container")
 const buyButton = document.querySelector(".buy-button")
 const bookingPanel = document.querySelector(".booking")
 const paymentClose = document.querySelector(".payment-close")
+const videoProgressBar = document.getElementById("scrollbar")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
@@ -134,8 +140,12 @@ let moveVideo = (direction) => {
         }
     }
 }
+let setVideoProgress = (value) => document.documentElement.style.setProperty('--progress-position', (value) + '%')
+let setVolume = (value) => document.documentElement.style.setProperty('--volume-position', (value) + '%')
 
-//---events
+setVideoProgress(50)
+setVolume(50)
+    //---events
 buyButton.addEventListener('click', _ => bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0')
 paymentClose.addEventListener('click', _ => bookingPanel.animate({ left: '-110%' }, 500).onfinish = _ => bookingPanel.style = '')
 videoButtonLeft.addEventListener('click', _ => moveVideo(-1))

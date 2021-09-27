@@ -1,6 +1,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
      :root {
-        --explore-pos: 400px
+        --explore-pos: 400px;
+        --volume-position: 0%;
+        --progress-position: 0%;
     }
     
     html {
@@ -207,8 +209,8 @@
         width: 74px;
         height: 100%;
         text-align: center;
-        font-size: 21px;
-        font-weight: 600;
+        font-size: 22px;
+        font-weight: 400;
         /* padding-top: 49px; */
         line-height: 121px;
         padding-left: 74px;
@@ -249,9 +251,20 @@
     }
     
     .slide-buttons {
-        width: 295px;
+        display: flex;
+        width: 180px;
         height: 100%;
         float: left;
+        justify-content: space-between;
+        margin-left: 55px;
+        margin-top: 53px;
+        margin-right: 60px;
+    }
+    
+    .slide-button {
+        width: 16px;
+        height: 16px;
+        background-color: #bcbcbc;
     }
     
     .welcome-message {
@@ -271,9 +284,9 @@
         color: white;
         font-family: Roboto;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 100;
         font-size: 29px;
-        letter-spacing: 1.4px;
+        letter-spacing: 1.7px;
         text-decoration: none;
     }
     
@@ -286,7 +299,7 @@
         background-color: maroon;
         font-family: Roboto;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 100;
         font-size: 22px;
         letter-spacing: 2px;
         text-decoration: none;
@@ -525,6 +538,41 @@
         background-image: url("assets/svg/next.svg");
     }
     
+    input[type=range] {
+        -webkit-appearance: none;
+    }
+    
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        background: linear-gradient(to right, maroon 0%, maroon var(--progress-position), white var(--progress-position), white 100%);
+        border-radius: 1.3px;
+        /* border: 0.2px solid #010101; */
+    }
+    
+    input[type=range].volumebar::-webkit-slider-runnable-track {
+        background: linear-gradient(to right, maroon 0%, maroon var(--volume-position), white var(--volume-position), white 100%);
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #fff;
+        height: 16px;
+        width: 16px;
+        margin-top: -5px;
+        border-radius: 50%;
+    }
+    /* .video-control-panel button,
+    .video-control-panel input {
+        left: 0;
+        float: left;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    } */
+    
     .video-control-panel .scrollbar {
         width: 920px;
         margin-right: 10px;
@@ -569,7 +617,7 @@
     .video-player-content .playbutton {
         cursor: pointer;
         position: relative;
-        transform: translate(0, 90%);
+        transform: translate(0, 95%);
         background-image: url("assets/svg/playbutton.svg");
         position: relative;
         margin-left: auto;
@@ -786,6 +834,39 @@
         margin-left: auto;
     }
     
+    .entryTicket>.amount-container {
+        position: absolute;
+        top: 35px;
+        right: 15px;
+        width: 105px;
+        /* width: 52px; */
+    }
+    
+    .entryTicket>.amount-container>.amount {
+        /* width: 52px; */
+        height: 25px;
+        border-width: 1px;
+        width: 100%;
+        margin-bottom: 16px;
+        color: #fff;
+    }
+    
+    .entryTicket>.amount-container>.amount * {
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .entryTicket>.amount-container .amount-button {
+        background-color: #000;
+        width: 30px;
+        min-width: 35px;
+    }
+    
+    .entryTicket>.amount-container input[type="number"] {
+        min-width: 20px;
+        color: #000;
+    }
+    
     .amount {
         margin-top: 14px;
         height: 44px;
@@ -919,6 +1000,7 @@
         width: 498px;
         float: left;
         padding-left: 30px;
+        position: relative;
     }
     
     .overview>h2 {
@@ -927,6 +1009,38 @@
         font-size: 31px;
         font-weight: 900;
         letter-spacing: 0.2px;
+    }
+    
+    .overview .date::before,
+    .overview .time::before,
+    .overview .radio::before {
+        background-image: url(assets/svg/date.svg);
+        height: 20px;
+        width: 20px;
+        display: block;
+        content: '';
+        float: left;
+        margin-right: 10px;
+        margin-top: 3px;
+        background-repeat: no-repeat;
+    }
+    
+    .overview .time::before {
+        background-image: url(assets/svg/Time.svg);
+    }
+    
+    .overview .radio::before {
+        background-image: url(assets/svg/check_circle_outline.svg);
+    }
+    
+    .overview>.picture {
+        background-image: url('assets/img/background.png');
+        background-size: cover;
+        position: absolute;
+        width: 150px;
+        height: 120px;
+        right: 29px;
+        top: 25px;
     }
     
     .overview>p {
@@ -940,7 +1054,7 @@
     .overview>ul {
         padding: 0;
         margin: 10px;
-        margin-left: 30px;
+        margin-left: 0px;
         list-style: none;
     }
     
@@ -1031,6 +1145,7 @@
         width: 340px;
         height: 206px;
         border-radius: 2px;
+        position: relative;
     }
     
     .top-card {
@@ -1039,7 +1154,7 @@
     }
     
     .bottom-card {
-        position: absolute;
+        position: absolute !important;
         top: 30px;
         left: 110px;
         z-index: 100;
@@ -1171,6 +1286,7 @@
         border-width: 1px;
         width: 100%;
         height: 45px;
+        position: relative;
     }
     
     .left-panel>input[type="date"]::-webkit-input-placeholder {
@@ -1314,6 +1430,28 @@
         content: ' ';
         margin-right: 24px;
         margin-left: 0px;
+    }
+    
+    .card-type {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        right: 15px;
+        top: 35px;
+    }
+    
+    .visa-card {
+        background-image: url(assets/svg/Visa.svg);
+        height: 31px;
+        width: 60px;
+        background-repeat: no-repeat;
+    }
+    
+    .master-card {
+        background-image: url(assets/svg/Mastercard.svg);
+        height: 40px;
+        width: 60px;
+        background-repeat: no-repeat;
     }
     
     .flex-column {

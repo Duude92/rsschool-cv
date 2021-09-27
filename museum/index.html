@@ -27,7 +27,7 @@
                     <li> <a href="#visiting">   Visiting    </a></li>
                     <li> <a href="#explore">    Explore     </a></li>
                     <li> <a href="#video">      Video       </a></li>
-                    <li> <a href="#galery">      Gallery       </a></li>
+                    <li> <a href="#gallery">      Gallery       </a></li>
                     <li> <a href="#tickets">   Tickets      </a></li>
                     <li> <a href="#contacts">   Contacts    </a></li>
                 </ul>
@@ -133,10 +133,10 @@
                         <!-- <button class="previous"></button> -->
                         <button class="playbutton"></button>
                         <!-- <button class="next"></button> -->
-                        <input type="range" name="scrollbar" id="scrollbar" class="scrollbar">
+                        <input type="range" name="scrollbar" id="scrollbar" class="scrollbar" onchange="setVideoProgress(this.value)" oninput="setVideoProgress(this.value)">
                         <div class="volume">
                             <button class="volumebutton"></button>
-                            <input type="range" name="volumebar" id="volumebar" class="volumebar">
+                            <input type="range" name="volumebar" id="volumebar" class="volumebar" onchange="setVolume(this.value)" oninput="setVolume(this.value)">
                         </div>
                         <button class="fullscreen"></button>
 
@@ -232,9 +232,22 @@
                                                 <h3 class="">Entry Ticket</h3>
                                                 <h4>Basic 18+ (20 €)</h4>
                                                 <h4>Senior 65+ (10 €)</h4>
+                                                <div class="amount-container">
+                                                    <div class="amount flex">
+                                                        <button class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                                        <input type="number" name="senior" id="senior" min="1" value="1">
+                                                        <button class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                    </div>
+                                                    <div class="amount flex">
+                                                        <button class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                                        <input type="number" name="senior" id="senior" min="1" value="1">
+                                                        <button class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="overview right-panel">
+                                            <div class="picture"></div>
                                             <h2>Overview</h2>
                                             <p>Tour to Louvre</p>
                                             <ul>
@@ -261,6 +274,10 @@
                                                 <div class="top-card">
                                                     <p>Card number</p>
                                                     <input type="text" id="cardNumber" class="card-number">
+                                                    <div class="card-type">
+                                                        <div class="visa-card"></div>
+                                                        <div class="master-card"></div>
+                                                    </div>
                                                     <p>Expiration date</p>
                                                     <input type="number" id="cardDate" class="date" value="03">
                                                     <input type="number" id="cardYear" class="year" value="2024">
@@ -320,7 +337,7 @@
                     <li> <a href="#visiting">   Visiting    </a></li>
                     <li> <a href="#explore">    Explore     </a></li>
                     <li> <a href="#video">      Video       </a></li>
-                    <li> <a href="#galery">   Gallery      </a></li>
+                    <li> <a href="#gallery">   Gallery      </a></li>
                     <li> <a href="#tickets">   Tickets      </a></li>
                     <li> <a href="#contacts">   Contacts    </a></li>
                 </ul>
