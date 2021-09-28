@@ -155,9 +155,13 @@
     .welcome-right-content {
         position: absolute;
         /* left: 35%; */
-        right: 230px;
-        top: 150px;
+        right: -1px;
+        top: -38px;
         z-index: 100;
+    }
+    
+    .welcome-container {
+        position: relative;
     }
     
     .slider-container {
