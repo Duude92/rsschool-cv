@@ -75,11 +75,12 @@
     
     header nav {
         margin-top: 0px;
+        width: 775px;
     }
     
     header nav ul {
         padding: 0;
-        width: 775px;
+        width: 100%;
         display: flex;
         margin-top: 11px;
         right: 0;
@@ -174,6 +175,7 @@
     }
     
     .slide {
+        background-size: cover;
         width: 1000px;
         float: left;
     }
@@ -434,6 +436,7 @@
     
     .explore-container {
         position: relative;
+        max-width: 720px;
         margin-top: 14px;
         padding-top: 0px;
     }
@@ -504,6 +507,9 @@
         vertical-align: middle;
         display: table-cell;
         position: relative;
+        min-width: 1440px;
+        min-height: 736px;
+        height: 736px;
     }
     
     .video-control-panel {
@@ -641,8 +647,8 @@
     .video-player-content {
         background-image: url("assets/video/poster.jpg");
         background-size: cover;
-        min-width: 1440px;
-        min-height: 650px;
+        width: 100%;
+        height: 100%;
     }
     
     .video .title {
@@ -1620,4 +1626,204 @@
         margin-top: 22px;
         margin-bottom: 35px;
         /* width: 100vw; */
+    }
+    
+    #navOpen {
+        display: none;
+    }
+    
+    #navOpen:checked~.menu-open>span {
+        transform: rotate(45deg);
+    }
+    
+    #navOpen:checked~.menu-open>span::before {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    
+    #navOpen:checked~.menu-open>span::after {
+        top: 0
+    }
+    
+    .menu-open {
+        display: none;
+        width: 3vw;
+        height: 3vw;
+        position: absolute;
+        align-items: center;
+        cursor: pointer;
+        top: 72px;
+        right: 20px;
+    }
+    
+    .menu-open>span,
+    .menu-open>span::before,
+    .menu-open>span::after {
+        display: block;
+        width: 100%;
+        height: 0.2vw;
+        position: absolute;
+        background-color: #fff;
+        transition-duration: 0.5s;
+    }
+    
+    .menu-open>span::before {
+        content: '';
+        top: -8px;
+    }
+    
+    .menu-open>span::after {
+        content: '';
+        top: 8px;
+        transition-duration: 0.05s;
+    }
+    
+    @media (max-width:1024px) {
+        .section {
+            padding-top: 71.5px;
+            padding-bottom: 75px;
+        }
+        .visiting-heading::after,
+        .underline::after {
+            bottom: -10px;
+        }
+        .explore .explore-margin {
+            max-width: 100%;
+            margin-bottom: 70px;
+            letter-spacing: 0.18px;
+        }
+        .explore .explore-description {
+            font-size: 20px;
+            line-height: 35px;
+            width: 100%;
+            margin-top: 0;
+            letter-spacing: 0.18px;
+        }
+        .explore .explore-description:nth-child(4) {
+            display: none;
+        }
+        .explore-container {
+            margin: 63px auto 0 auto;
+        }
+        .explore {
+            padding-bottom: 60px;
+        }
+        .visiting {
+            padding-bottom: 4px;
+        }
+        .explore .container {
+            display: block;
+        }
+        #navOpen:checked~nav {
+            display: initial;
+        }
+        header nav {
+            position: absolute;
+            left: 56px;
+            top: 167px;
+            width: 120px;
+            height: 500px;
+            display: none;
+        }
+        header nav ul {
+            flex-wrap: wrap;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+        header nav ul li::after {
+            float: right;
+            content: '';
+            display: block;
+            background-image: url('assets/svg/li-arrow.svg');
+            width: 8px;
+            height: 12px;
+        }
+        header nav ul a {
+            font-size: 20px;
+            letter-spacing: 2.2px;
+        }
+        .welcome-right-content {
+            top: -50px;
+        }
+        .slider-wrapper {
+            height: 525px;
+            width: 700px;
+        }
+        .slides .slide {
+            width: 700px;
+            height: 525px;
+        }
+        .section-title {
+            font-size: 50px;
+        }
+        .welcome-message {
+            padding: 0;
+        }
+        .welcome .welcomeundertext {
+            font-size: 24px;
+            letter-spacing: 2.18px;
+        }
+        .welcome .welcomebutton {
+            margin-top: 50px;
+            height: 60px;
+            width: 300px;
+            font-size: 20px;
+            line-height: 65px;
+            letter-spacing: 2.15px;
+        }
+        .welcome {
+            min-height: 460px;
+        }
+        .slider-controls {
+            width: 100%;
+        }
+        .slider-controls .number {
+            padding-left: 220px;
+        }
+        .slide-button {
+            height: 12px;
+            width: 12px;
+        }
+        .slide-buttons {
+            margin-top: 56px;
+            margin-left: 45px;
+            width: 160px;
+            margin-right: 45px;
+        }
+        .menu-open {
+            display: block;
+        }
+        .cards-container {
+            margin-top: 68px;
+            padding: 0 109px 0 109px;
+            column-gap: 108px;
+            row-gap: 5px;
+        }
+        .cards-container .title {
+            font-size: 28px;
+            letter-spacing: 3px;
+        }
+        .cards-container .title::after {
+            right: 55%;
+        }
+        .cards-container .virtualtour {
+            font-size: 22px;
+            letter-spacing: -1.2px;
+            margin-top: 20px;
+        }
+        .cards-container .streetview {
+            font-size: 16px;
+        }
+        .cards-container a {
+            min-width: 330px;
+        }
+        .cards-container a img {
+            width: 330px;
+        }
+        .video-description {
+            display: none;
+        }
+        .video .video-player {
+            padding-top: 25px;
+        }
     }
