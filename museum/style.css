@@ -1824,6 +1824,45 @@
             display: none;
         }
         .video .video-player {
+            background-size: contain;
+            display: block;
             padding-top: 25px;
+            min-width: 984px;
+            width: 984px;
+            min-height: 504px;
+            height: 504px;
+        }
+        .video .video-control-panel {
+            position: absolute;
+            bottom: 0px;
+            min-height: 60px;
+        }
+        .booking {
+            display: none;
+        }
+        .video-slider-container>iframe {
+            width: 300px;
+            height: 170px;
+        }
+        .video-slider-container {
+            height: auto;
+        }
+        .video {
+            min-height: 855px;
+        }
+        .gallery-container img {
+            width: 304px;
+        }
+        .gallery-container {
+            column-gap: 0px;
+            height: 2020px;
+        }
+        .g-cont {
+            width: 1022px;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery {
+            max-height: 1312px;
         }
     }
