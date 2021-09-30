@@ -746,7 +746,7 @@
         padding-top: 50px;
         height: 1910px;
         /* height: 2850px; */
-        width: 1440px;
+        width: 100%;
         overflow-y: hidden;
     }
     
@@ -1854,15 +1854,112 @@
             width: 304px;
         }
         .gallery-container {
-            column-gap: 0px;
+            /* column-gap: 0px; */
             height: 2020px;
         }
         .g-cont {
-            width: 1022px;
+            /* width: 1022px; */
             margin: 0;
             padding: 0;
         }
         .gallery {
             max-height: 1312px;
+        }
+        .tickets-container {
+            margin-top: 68px;
+        }
+        .tickets-container>img {
+            width: 700px;
+            height: 440px;
+        }
+        .ticket-type {
+            display: none;
+        }
+        .ticket-selector {
+            padding-left: 55px;
+            display: block;
+        }
+        .ticket-amount {
+            margin-left: 0;
+            float: right;
+            width: 203px;
+        }
+        .ticket-amount h2 {
+            margin-left: 0px;
+        }
+        .amount-container {
+            margin-right: auto;
+            margin-left: 0;
+            width: 175px;
+        }
+        .amount-block:first-child {
+            margin-top: 29px;
+        }
+        .amount-block {
+            margin-top: 27px;
+        }
+        .amount {
+            margin-top: 10px;
+        }
+        .total {
+            margin-left: 0;
+            margin-top: revert;
+        }
+        .buy-button {
+            margin-top: 68px;
+            color: #fff;
+            font-weight: 100;
+            background-color: #000;
+            border-radius: 2px;
+        }
+        .tickets {
+            min-height: 572px;
+        }
+        .parallax {
+            padding: 0;
+        }
+        .contacts-description {
+            font-size: 24px;
+            margin-top: 65px;
+            line-height: 28px;
+            margin-bottom: 28px;
+        }
+        .contacts img {
+            margin-top: 65px;
+            width: 694px;
+            height: 454px;
+        }
+        .contacts-address {
+            font-size: 20px;
+            line-height: 38px;
+        }
+        .contacts {
+            min-height: unset;
+            padding-bottom: 63px;
+        }
+        footer {
+            padding-top: 37px;
+        }
+        footer nav {
+            min-width: unset;
+        }
+        footer nav ul {
+            padding-left: 5px;
+            width: 402px;
+            column-gap: 30px;
+        }
+        footer nav ul li {
+            max-width: 150px;
+        }
+        .social {
+            justify-content: unset;
+            margin-top: 93px;
+        }
+        .social ul {
+            padding-left: 4px;
+        }
+        .social ul li {
+            margin-left: 0;
+            margin-right: 26px;
         }
     }
