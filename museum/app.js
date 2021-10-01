@@ -21,7 +21,7 @@ class video {
     }
     Init = (selector) => {
         selector.innerHTML += this.innerHTML
-        selector.style.width = selector.offsetWidth + 486 + 'px';
+            // selector.style.width = selector.offsetWidth + 486 + 'px';
 
         let elem = document.createElement('div')
         elem.className = "video-dot"
