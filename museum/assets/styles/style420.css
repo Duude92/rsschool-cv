@@ -1,0 +1,127 @@
+@media (min-width:420px) {
+    .logo a {
+        margin-left: 49px;
+    }
+    h1 {
+        font-size: 16px;
+    }
+    header {
+        padding-top: 37px;
+    }
+    .logo {
+        margin-top: 0;
+        height: 15px;
+        background-size: contain;
+    }
+    .menu-open {
+        top: 44px;
+        width: 8vw;
+    }
+    .section {
+        padding-top: 46px;
+    }
+    .underline::after {
+        bottom: 13px;
+    }
+    .welcome {
+        padding-top: 20px;
+    }
+    .welcome-message {
+        margin-top: 19px;
+        line-height: 40px;
+    }
+    .welcome .welcomeundertext {
+        font-size: 16px;
+        padding-top: 24px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    .slides .slide {
+        width: 380px;
+        height: 285px;
+    }
+    .slider-wrapper {
+        height: 285px;
+    }
+    .welcome-right-content {
+        padding-top: 50px;
+    }
+    .slider-controls .number {
+        font-size: 16px;
+        padding-left: 73px;
+        line-height: 79px;
+        width: 50px;
+    }
+    .number::after {
+        margin-left: 25px;
+        height: 13px;
+        margin-top: 34px;
+    }
+    .slider-controls {
+        height: 80px;
+    }
+    .slide-buttons {
+        margin-top: 37px;
+        margin-left: 26px;
+        width: 76px;
+        margin-right: 24px;
+    }
+    .slide-button {
+        width: 7px;
+        height: 7px;
+    }
+    .arrow {
+        background-size: contain;
+        height: 8px;
+        width: 22px;
+    }
+    .arrow-right {
+        margin-left: 12px;
+    }
+    .control-arrows {
+        padding-top: 37px;
+    }
+    .cards-container {
+        margin-top: 27px;
+        padding: 0px 50px 0 50px;
+        column-gap: unset;
+        row-gap: 35px;
+        width: auto;
+    }
+    .cards-container .title {
+        font-size: 18px;
+        letter-spacing: 5px;
+    }
+    .cards-container a:hover>.title::after {
+        right: 45%;
+    }
+    .cards-container .virtualtour {
+        font-size: 16px;
+    }
+    .visiting {
+        padding-bottom: 34px;
+    }
+    .explore-container {
+        max-width: 380px;
+    }
+    .explore-container>.before {
+        background-size: contain;
+        width: 380px;
+        height: 368px;
+    }
+    .explore-container>.explore-after {
+        background-size: cover;
+        height: 368px;
+    }
+    .explore-positioner {
+        height: 100%;
+    }
+    .explore .explore-margin {
+        margin-bottom: 28px;
+    }
+    .explore {
+        min-height: 450px;
+        padding-bottom: 40px;
+    }
+}
