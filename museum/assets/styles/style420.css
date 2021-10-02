@@ -104,7 +104,7 @@
     }
     .explore-container {
         max-width: 380px;
-        padding-top: 18px;
+        margin-top: 47px;
     }
     .explore-container>.before {
         background-size: contain;
