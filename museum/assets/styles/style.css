@@ -785,7 +785,7 @@
     
     .parallax {
         min-height: 251px;
-        padding: 0;
+        padding: 0 !important;
     }
     
     .parallax-container {
