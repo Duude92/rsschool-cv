@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gladishenko Yuriy CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <input type="checkbox" name="burgerOpen" id="burgerOpen">
+            <label class="menu-button" for="burgerOpen"><span></span></label>
+            <ul>
+                <li class="hidden"><a href="#education">Education</a></li>
+                <li class="hidden"><a href="#languages">Languages</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                <li class="hidden"><a href="#about">About me</a></li>
+                <li class="hidden"><a href="#strengths">My strengths</a></li>
+                <li><a href="#example">Code example</a></li>
+                <li><a href="#projects">My projects</a></li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+            <aside>
+                <header>
+                    <h1>Yuriy<br>Gladishenko</h1>
+                </header>
+                <article>
+                    <div class="photo-container"><img src="assets/images/hedgehog.jpg" alt="Personal photo"></div>
+                    <div class="education">
+                        <h2 id='education' class='title'>Education</h2>
+                        <ul>
+                            <li>
+                                <h3>2010 - 2014.</h3>
+                                <h4>Bachelor in Computer Engineering</h4>
+                                <h4> Kherson polytechnical college</h4>
+                            </li>
+                            <li>
+                                <h3>2014 - 2015.</h3>
+                                <h4>Master in Computer Engineering</h4>
+                                <h4> Kherson national technical university</h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="langs">
+                        <h2 id="languages" class='title'>Languages</h2>
+                        <ul>
+                            <li>Ukrainian (native)</li>
+                            <li>Russian</li>
+                            <li>English</li>
+                        </ul>
+                    </div>
+                    <div class="skills">
+                        <h2 id='skills' class='title'>Skills</h2>
+                        <div class="skills-container">
+                            <!-- <span></span> -->
+
+                            <ul>
+                                <li class='html'>HTML</li>
+                                <li class='css'>CSS</li>
+                                <li class='js'>JavaScript</li>
+                                <li class='gh'>GitHub</li>
+                                <li class='cs'>C#</li>
+                                <li class='py'>Python</li>
+                                <li class='cpp'>C++</li>
+                                <li class='r'>Rust</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 id='contacts' class='title'>Contacts</h2>
+                    <p><a href="https://discord.com/users/301750798168358916" class='discord'>link#4999</a></p>
+                    <p><a href="mailto:switch4acc@gmail.com" class='gmail'>Mail</a></p>
+
+                </article>
+            </aside>
+            <main>
+                <div class="content">
+                    <div class="about">
+                        <h2 id="about">About me</h2>
+                        <p>
+                            My name is Yuri Gladishenko. <br>I am interested in new technologies, software development and new scientific discoveries. I enjoy studying and learning new things. I like working and looking at the results of my work. At the
+                            moment I am improving my web development skills. I believe, that my ability to learn and to gain new skills will lead me through this path of becoming a proficient Frontend Developer.
+                        </p>
+                        <h2 id="strengths">My strengths</h2>
+                        <ul>
+                            <li>Quick learning</li>
+                            <li>Hardworking</li>
+                            <li>Responsible</li>
+                            <li>Attention to details</li>
+                            <li>Flexibility</li>
+                        </ul>
+                        <h2 id="example">Code example</h2>
+                        <pre><code class="hljs javascript"> 
+class VideoCard {
+    constructor(videoName) {
+        this.videoUrl = `assets/video/${videoName}.mp4`
+        this.imageUrl = `assets/images/${videoName}.jpg`
+        this.title = videoName
+    }
+    playVideo = _ => {
+        video.style.height = video.offsetHeight + 'px'
+        this.setVideo()
+        setTimeout(_ => {
+            video.style = ''
+        }, 1500)
+        playVideo()
+    }
+    setVideo = _ => {
+        videoTitle.innerText = this.title 
+        videoDescription.innerText = this.description
+        currentVideo = this
+        video.src = this.videoUrl
+        return this
+    }
+}</code>
+                    </pre>
+                        <h2 id="projects">Projects</h2>
+                        <div class="projects-container">
+                            <div class="project">
+                                <input type="checkbox" id="project1" class="project-input">
+                                <label for="project1"><img class="full" src="assets/images/museum.png" alt="museum project" ><img src="assets/images/museum.png" alt="museum project" ></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://duude92-museum.netlify.app/" target="_blank">Museum</a>
+                            </div>
+                            <div class="project">
+                                <input type="checkbox" id="project2" class="project-input">
+                                <label for="project2"><img class="full" src="assets/images/customvideo.png" alt="customvideo project" ><img src="assets/images/customvideo.png" alt="customvideo project" ></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://duude92-customvideo.netlify.app/" target="_blank">Custom-video</a>
+                            </div>
+                            <div class="project">
+                                <input type="checkbox" id="project3" class="project-input">
+                                <label for="project3"><img class="full" src="assets/images/verticalslider.png" alt="verticalslider project" ><img src="assets/images/verticalslider.png" alt="verticalslider project" ></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://verticalslider-duude92.netlify.app/" target="_blank">Vertical-slider</a>
+                            </div>
+                            <div class="project">
+                                <input type="checkbox" id="project4" class="project-input">
+                                <label for="project4"><img class="full" src="assets/images/cv.png" alt="cv project" ><img src="assets/images/cv.png" alt="cv project" ></label>
+                                <div class="screen-blocker"></div>
+                                <a href="https://github.com/Duude92/rsschool-cv/pull/2" target="_blank">CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <div class="github">
+                <a href="https://github.com/Duude92" target="_blank"></a>
+            </div>
+            <p>2021</p>
+            <div class="rs">
+                <a href="http://rs.school" target="_blank"></a>
+            </div>
+
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
