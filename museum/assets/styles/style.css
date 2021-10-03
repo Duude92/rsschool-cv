@@ -3,6 +3,7 @@
         --explore-pos: 70%;
         --volume-position: 0%;
         --progress-position: 0%;
+        --page-scroll: 0%;
     }
     
     html {
@@ -12,6 +13,40 @@
     body {
         width: 100%;
         margin: 0%;
+    }
+    
+    .body-scrollbar {
+        position: fixed;
+        right: 0;
+        top: 0;
+        content: '';
+        width: 1vw;
+        height: 100%;
+        z-index: 10000;
+        background-color: rgba(83, 83, 83, 0.5);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    
+    .body-scrollbar:hover {
+        opacity: 1;
+    }
+    
+    .body-scrollbar::after {
+        content: '';
+        width: 100%;
+        height: 20px;
+        background-color: #000;
+        top: var(--page-scroll);
+        display: block;
+        border-radius: 25%;
+        border-style: solid;
+        border-width: 0.5px;
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+    
+    body::-webkit-scrollbar {
+        display: none
     }
     
     .preload * {
@@ -982,8 +1017,8 @@
     .booking-container {
         position: relative;
         margin: 3% auto;
-        width: 1455px;
-        height: 845px;
+        width: 76%;
+        height: 85%;
         background-color: #fff;
     }
     
@@ -1654,7 +1689,7 @@
         position: absolute;
         align-items: center;
         cursor: pointer;
-        top: 72px;
+        top: 58px;
         right: 20px;
     }
     
@@ -1667,6 +1702,7 @@
         position: absolute;
         background-color: #fff;
         transition-duration: 0.5s;
+        top: 50%;
     }
     
     .menu-open>span::before {
@@ -1831,6 +1867,7 @@
             padding-top: 25px;
             min-width: 984px;
             min-height: 504px;
+            height: 504px;
         }
         .video .video-control-panel {
             position: absolute;
@@ -1961,5 +1998,12 @@
         .social ul li {
             margin-left: 0;
             margin-right: 26px;
+        }
+        .booking-container {
+            width: 100%;
+            height: 69%;
+        }
+        .booking-container>.content {
+            padding: 41px 26px;
         }
     }

@@ -42,6 +42,7 @@ const buyButton = document.querySelector(".buy-button")
 const bookingPanel = document.querySelector(".booking")
 const paymentClose = document.querySelector(".payment-close")
 const videoProgressBar = document.getElementById("scrollbar")
+const pageScrollBar = document.querySelector("pade-scroll")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
@@ -69,19 +70,7 @@ for (let index = 1; index <= 15; index++) {
     galleryImages.push(`assets/img/Gallery/galery${index}.jpg`)
 }
 galleryImages.sort(() => .5 - Math.random())
-    // for (let index = 0; index < 3; index++) {
-    //     const column = document.createElement('div')
-    //     column.className = 'column'
-    //     galleryContainer.append(column)
 
-//     for (let index2 = 0; index2 < 5; index2++) {
-//         let tempImage = new Image()
-//         tempImage.src = galleryImages[index * 5 + index2]
-//         column.append(tempImage)
-
-//     }
-
-// }
 galleryImages.forEach(img => {
     let tempImage = new Image()
     tempImage.src = img
