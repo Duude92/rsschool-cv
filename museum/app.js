@@ -50,10 +50,14 @@ const header = document.getElementsByTagName("header")[0]
 const footerHide = document.querySelectorAll(".footer-hide")
 const social = document.querySelector(".social")
 const endBlock = document.querySelector(".end")
+let lis = header.getElementsByTagName("nav")[0].getElementsByTagName("ul")[0].getElementsByTagName("li")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
 let mainHidden = false
+
+var liArray = Array.from(lis)
+liArray.forEach(e => e.getElementsByTagName("a")[0].onclick = _ => closeMenu(true))
 
 let slides = []
 slides.push(new slide('assets/img/Welcome-slider/1.jpg'))
@@ -140,16 +144,45 @@ let moveVideo = (direction) => {
 let setVideoProgress = (value) => document.documentElement.style.setProperty('--progress-position', (value) + '%')
 let setVolume = (value) => document.documentElement.style.setProperty('--volume-position', (value) + '%')
 
+let closeMenu = (checked) => {
+    console.log('call')
+    console.log(navButton.checked)
+    if (navButton.checked === checked) {
+        if (document.body.clientWidth <= 768) {
+            mainBlock.style = ""
+            footerHide.forEach(e => e.style = "")
+
+            social.classList.remove("social-only")
+            header.classList.remove("expanded")
+
+            endBlock.style = ""
+        }
+        if (document.body.clientWidth <= 1024) {
+            welcomeLeftContainer.style = ""
+        }
+    }
+    if (checked) {
+        navButton.checked = false
+    }
+
+}
+
 setVideoProgress(50)
 setVolume(50)
     //---events
 buyButton.addEventListener('click', _ => {
     bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0'
     if (document.body.clientWidth <= 768) {
+        mainBlock.style.display = "none"
         window.scroll(0, 0)
     }
 })
-paymentClose.addEventListener('click', _ => bookingPanel.animate({ left: '-110%' }, 500).onfinish = _ => bookingPanel.style = '')
+paymentClose.addEventListener('click', _ => {
+    bookingPanel.animate({ left: '-110%' }, 500).onfinish = _ => bookingPanel.style = ''
+    if (document.body.clientWidth <= 768) {
+        mainBlock.style = ""
+    }
+})
 videoButtonLeft.addEventListener('click', _ => moveVideo(-1))
 videoButtonRight.addEventListener('click', _ => moveVideo(1))
 leftArrow.addEventListener('click', _ => moveSlide(-1))
@@ -162,7 +195,8 @@ window.onload = () => {
 navButton.onchange = _ => {
     if (document.body.clientWidth <= 420) {
 
-    } else if (document.body.clientWidth <= 768) {
+    }
+    if (document.body.clientWidth <= 768) {
         if (navButton.checked) {
             mainBlock.style.display = "none"
             footerHide.forEach(e => e.style.display = "none")
@@ -171,21 +205,15 @@ navButton.onchange = _ => {
             endBlock.style.display = "none"
             header.classList.add("expanded")
 
-        } else {
-            mainBlock.style.display = ""
-            footerHide.forEach(e => e.style = "")
-
-            social.classList.remove("social-only")
-            header.classList.remove("expanded")
-
-            endBlock.style = ""
         }
 
 
-    } else if (document.body.clientWidth <= 1024)
+    }
+    if (document.body.clientWidth <= 1024)
         if (navButton.checked) {
             welcomeLeftContainer.style.display = "none"
         } else {
             welcomeLeftContainer.style = ""
         }
+    closeMenu(false)
 }

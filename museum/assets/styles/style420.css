@@ -7,6 +7,7 @@
     }
     header {
         padding-top: 37px;
+        min-height: 20px;
     }
     .logo {
         margin-top: 0;
@@ -14,7 +15,7 @@
         background-size: contain;
     }
     .menu-open {
-        top: 44px;
+        top: 37px;
         width: 8vw;
     }
     .section {
@@ -264,5 +265,88 @@
     }
     .end>.flex>div:nth-child(2) {
         display: none;
+    }
+    header nav {
+        top: 118px;
+    }
+    .image-container>img {
+        width: 95px;
+        height: 95px;
+    }
+    header.expanded {
+        min-height: 485px;
+    }
+    .booking-container>.content>.left-panel {
+        margin-top: 25px;
+        width: 86%;
+    }
+    .booking-container>.content>.left-panel>.section-title {
+        font-size: 32px;
+    }
+    .booking-container>.content>.left-panel .visiting-heading::after {
+        bottom: -38px;
+    }
+    .booking-container>.content>.left-panel>h3 {
+        margin-top: 3px;
+    }
+    #dateInput,
+    #timeInput {
+        width: 99%;
+        margin-left: 0;
+    }
+    #ticketType {
+        height: 48px;
+        width: 100%;
+    }
+    .entryTicket>.amount-container {
+        top: 16px;
+        right: 18px;
+    }
+    .booking-container>.content>.overview {
+        margin-top: 48px;
+        width: 82.5%;
+        height: 883px;
+    }
+    .overview>.picture {
+        width: 120px;
+        height: 96px;
+        right: 4%;
+    }
+    .overview>.count {
+        padding-left: 3px;
+    }
+    .overview>.count .count-text {
+        width: 75%;
+    }
+    .overview>.count>hr {
+        width: 96%;
+    }
+    .overview>.count>.total-sum>p {
+        margin-left: -1px;
+        margin-top: 2px;
+        margin-right: 60%;
+    }
+    .overview>.payment>.top-card,
+    .overview>.payment>.bottom-card {
+        width: 313px;
+    }
+    .cardholder {
+        width: 92% !important;
+    }
+    .overview>.payment>.bottom-card {
+        position: relative !important;
+        top: 25px !important;
+        left: 1px !important;
+        padding-left: 0;
+        width: 330px !important;
+    }
+    .black-slide {
+        margin-top: 19px;
+        height: 45px;
+        background-color: #000;
+        margin-bottom: 14px;
+    }
+    .overview>.payment {
+        height: 558px;
     }
 }

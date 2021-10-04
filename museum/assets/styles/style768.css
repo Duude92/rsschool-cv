@@ -155,6 +155,7 @@
     }
     .amount-container {
         margin-top: 38px;
+        overflow: hidden;
     }
     .amount-block:first-child {
         margin-top: unset;
@@ -265,11 +266,11 @@
         width: 69%;
     }
     .booking-container>.content>.left-panel>.br {
-        height: 13px;
+        height: 16px;
     }
     #dateInput,
     #timeInput {
-        width: 252px;
+        width: 248px;
     }
     #timeInput {
         margin-left: 21.9px;
@@ -289,7 +290,7 @@
     }
     .booking-container>.content>.overview {
         margin-left: 0;
-        margin-top: 53px;
+        margin-top: 51px;
         padding-left: 13px;
         width: 66.9%;
     }
@@ -315,5 +316,37 @@
     .book {
         right: 15px;
         bottom: 28px;
+    }
+    .video-control-panel .scrollbar {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        margin-left: 0px;
+    }
+    .video-control-panel .volume {
+        width: 70%;
+    }
+    .video-control-panel .volumebar {
+        width: 90%;
+    }
+    .menu-open {
+        top: 40px;
+    }
+    .gallery-container img {
+        width: 352px;
+    }
+    .left-panel>input,
+    .left-panel>select,
+    .entryTicket {
+        height: 41px;
+    }
+    .ticketType {
+        height: 44px;
+    }
+    .entryTicket {
+        height: 133px;
+    }
+    .booking-container {
+        margin-top: 0;
     }
 }

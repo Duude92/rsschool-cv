@@ -46,7 +46,7 @@
     }
     
     body::-webkit-scrollbar {
-        display: none
+        /* display: none */
     }
     
     .preload * {
@@ -155,7 +155,7 @@
     
     .section-title {
         margin: 0px;
-        font-family: Forum;
+        font-family: Forum !important;
         font-style: normal;
         font-weight: normal;
         font-size: 80px;
@@ -493,6 +493,7 @@
         background-image: url('../../assets/img/Explore/after.jpg');
         width: var(--explore-pos);
         height: 700px;
+        background-position-x: right;
     }
     
     .explore-positioner {
@@ -833,6 +834,7 @@
         background-image: url('../../assets/img/parallax.jpg');
         background-size: cover;
         background-attachment: fixed;
+        background-position: center;
     }
     
     .tickets {
@@ -1038,7 +1040,7 @@
     }
     
     .booking-container>.content>.left-panel {
-        width: 400px;
+        width: 402px;
         float: left;
     }
     
@@ -1050,13 +1052,14 @@
         height: 662px;
         width: 498px;
         float: left;
-        padding-left: 30px;
+        padding-left: 28px;
         position: relative;
     }
     
     .overview>h2 {
         margin-left: 0px;
         margin-top: 26px;
+        margin-bottom: 0;
         font-size: 31px;
         font-weight: 900;
         letter-spacing: 0.2px;
@@ -1254,12 +1257,12 @@
     .overview>.payment input {
         margin-top: 5px !important;
         border: none;
-        height: 35px;
+        height: 33px;
     }
     
     .overview>.payment input[type='Number'] {
-        width: 100px !important;
-        margin-right: 13px;
+        width: 97px !important;
+        margin-right: 12px;
     }
     
     .cardholder {
@@ -1267,7 +1270,7 @@
     }
     
     .card-number {
-        width: 215px !important;
+        width: 211px !important;
     }
     
     #cardCvv {
@@ -1322,7 +1325,7 @@
     
     #dateInput,
     #timeInput {
-        width: 190px;
+        width: 188px;
     }
     
     #timeInput {
@@ -1336,8 +1339,8 @@
         border-color: #9D8665;
         color: #9D8665;
         border-width: 1px;
-        width: 100%;
-        height: 45px;
+        width: 98.1%;
+        height: 42px;
         position: relative;
     }
     
@@ -1718,4 +1721,12 @@
         content: '';
         top: 8px;
         transition-duration: 0.05s;
+    }
+    
+    .booking * {
+        font-family: 'Roboto';
+    }
+    
+    main {
+        margin-top: -1px;
     }
