@@ -42,10 +42,18 @@ const buyButton = document.querySelector(".buy-button")
 const bookingPanel = document.querySelector(".booking")
 const paymentClose = document.querySelector(".payment-close")
 const videoProgressBar = document.getElementById("scrollbar")
-const pageScrollBar = document.querySelector("pade-scroll")
+const pageScrollBar = document.querySelector(".pade-scroll")
+const navButton = document.getElementById("navOpen")
+const welcomeLeftContainer = document.querySelector(".welcome-left-content")
+const mainBlock = document.getElementsByTagName("main")[0]
+const header = document.getElementsByTagName("header")[0]
+const footerHide = document.querySelectorAll(".footer-hide")
+const social = document.querySelector(".social")
+const endBlock = document.querySelector(".end")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
+let mainHidden = false
 
 let slides = []
 slides.push(new slide('assets/img/Welcome-slider/1.jpg'))
@@ -135,7 +143,12 @@ let setVolume = (value) => document.documentElement.style.setProperty('--volume-
 setVideoProgress(50)
 setVolume(50)
     //---events
-buyButton.addEventListener('click', _ => bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0')
+buyButton.addEventListener('click', _ => {
+    bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0'
+    if (document.body.clientWidth <= 768) {
+        window.scroll(0, 0)
+    }
+})
 paymentClose.addEventListener('click', _ => bookingPanel.animate({ left: '-110%' }, 500).onfinish = _ => bookingPanel.style = '')
 videoButtonLeft.addEventListener('click', _ => moveVideo(-1))
 videoButtonRight.addEventListener('click', _ => moveVideo(1))
@@ -145,4 +158,34 @@ window.onload = () => {
     let body = document.querySelector('.preload')
 
     body.className = ''
+}
+navButton.onchange = _ => {
+    if (document.body.clientWidth <= 420) {
+
+    } else if (document.body.clientWidth <= 768) {
+        if (navButton.checked) {
+            mainBlock.style.display = "none"
+            footerHide.forEach(e => e.style.display = "none")
+                // footerHide.style.display = "none"
+            social.classList.add("social-only")
+            endBlock.style.display = "none"
+            header.classList.add("expanded")
+
+        } else {
+            mainBlock.style.display = ""
+            footerHide.forEach(e => e.style = "")
+
+            social.classList.remove("social-only")
+            header.classList.remove("expanded")
+
+            endBlock.style = ""
+        }
+
+
+    } else if (document.body.clientWidth <= 1024)
+        if (navButton.checked) {
+            welcomeLeftContainer.style.display = "none"
+        } else {
+            welcomeLeftContainer.style = ""
+        }
 }

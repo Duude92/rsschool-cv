@@ -222,4 +222,98 @@
     .end {
         padding-top: 4px;
     }
+    header {
+        min-height: 56px;
+    }
+    header.expanded {
+        min-height: 812px;
+    }
+    header nav {
+        top: 137px;
+        height: 800px;
+    }
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 36px;
+        row-gap: 20px;
+        column-gap: 20px;
+    }
+    .image-container>img:first-child {
+        order: 1;
+    }
+    .image-container>img:last-child {
+        order: 2;
+    }
+    .social-only {
+        min-width: 536px;
+        margin-top: 0;
+    }
+    .social-only>ul {
+        margin-top: 0;
+    }
+    footer {
+        min-height: unset;
+    }
+    .booking-container>.content>.left-panel>h3 {
+        margin-top: 13px;
+    }
+    .booking-container>.content>.left-panel .visiting-heading::after {
+        bottom: -48px;
+    }
+    .booking-container>.content>.left-panel {
+        width: 69%;
+    }
+    .booking-container>.content>.left-panel>.br {
+        height: 13px;
+    }
+    #dateInput,
+    #timeInput {
+        width: 252px;
+    }
+    #timeInput {
+        margin-left: 21.9px;
+    }
+    .booking-container {
+        height: 1450px;
+    }
+    .entryTicket {
+        width: 100%;
+    }
+    .entryTicket>.amount-container {
+        top: 2px;
+        right: 18px;
+    }
+    .booking {
+        position: absolute;
+    }
+    .booking-container>.content>.overview {
+        margin-left: 0;
+        margin-top: 53px;
+        padding-left: 13px;
+        width: 66.9%;
+    }
+    .overview>h2 {
+        margin-top: 25px;
+    }
+    .overview>.picture {
+        right: 2.7%;
+    }
+    .overview>.count .count-text {
+        width: 428px;
+    }
+    .overview>.count>.total-sum>p {
+        margin-right: 375px;
+    }
+    .overview>.payment {
+        margin-top: 7px;
+    }
+    .overview>.payment>.bottom-card {
+        top: 28px;
+        left: 140px;
+    }
+    .book {
+        right: 15px;
+        bottom: 28px;
+    }
 }
