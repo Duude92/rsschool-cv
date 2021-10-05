@@ -36,6 +36,7 @@
         padding-top: 24px;
     }
     .section-title {
+        min-width: 400px !important;
         font-size: 28px;
         min-height: 50px;
     }
@@ -348,5 +349,8 @@
     }
     .overview>.payment {
         height: 558px;
+    }
+    .social {
+        min-width: 380px;
     }
 }
