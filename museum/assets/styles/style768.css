@@ -78,6 +78,7 @@
         padding: 0 55px 0 55px;
         column-gap: 57px;
         row-gap: 40px;
+        width: 85%;
     }
     .cards-container a {
         min-width: 280px;
