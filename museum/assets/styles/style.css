@@ -210,18 +210,18 @@
     
     .slides,
     .slide {
-        height: 750px;
+        height: 100%;
     }
     
     .slide {
         background-size: cover;
-        width: 1000px;
+        width: 75vw;
         float: left;
     }
     
     .slider-wrapper {
-        width: 1000px;
-        height: 750px;
+        width: 75vw;
+        height: 59vw;
         overflow: hidden;
         position: relative;
     }
