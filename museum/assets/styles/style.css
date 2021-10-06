@@ -478,15 +478,16 @@
     
     .explore-container {
         position: relative;
-        max-width: 720px;
+        max-width: 37vw;
         margin-top: 14px;
         padding-top: 0px;
     }
     
     .explore-container>.before {
         background-image: url('../../assets/img/Explore/before.jpg');
-        width: 720px;
-        height: 700px;
+        width: 37vw;
+        height: 36.5vw;
+        background-size: cover;
     }
     
     .explore-container>.explore-after {
@@ -495,8 +496,9 @@
         top: 0;
         background-image: url('../../assets/img/Explore/after.jpg');
         width: var(--explore-pos);
-        height: 700px;
+        height: 36.5vw;
         background-position-x: right;
+        background-size: cover;
     }
     
     .explore-positioner {
@@ -504,7 +506,7 @@
         top: 0;
         left: var(--explore-pos);
         content: '';
-        height: 700px;
+        height: 100%;
         width: 10px;
         background-color: #fff;
         cursor: ew-resize;
