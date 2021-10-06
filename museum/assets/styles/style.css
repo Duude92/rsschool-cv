@@ -209,6 +209,7 @@
     
     .slider-container {
         transition: 1s;
+        position: relative;
     }
     
     .slides,
@@ -223,10 +224,11 @@
     }
     
     .slider-wrapper {
-        width: 75vw;
-        height: 59vw;
+        width: 50vw;
+        height: 39vw;
         overflow: hidden;
-        position: relative;
+        position: absolute;
+        right: 0;
     }
     
     .slides {
