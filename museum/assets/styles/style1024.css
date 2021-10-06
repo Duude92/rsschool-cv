@@ -121,6 +121,7 @@
         padding: 0 109px 0 109px;
         column-gap: 108px;
         row-gap: 5px;
+        width: 79%;
     }
     .cards-container .title {
         font-size: 28px;
@@ -274,6 +275,7 @@
         max-width: 150px;
     }
     .social {
+        min-width: 369px;
         justify-content: unset;
         margin-top: 93px;
     }

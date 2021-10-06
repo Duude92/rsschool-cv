@@ -6,8 +6,11 @@
         --page-scroll: 0%;
     }
     
+    * {}
+    
     html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
     }
     
     body {
