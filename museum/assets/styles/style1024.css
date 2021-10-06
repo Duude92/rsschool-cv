@@ -69,7 +69,7 @@
         top: -50px;
     }
     .slider-wrapper {
-        height: 525px;
+        height: 560px;
         width: 700px;
     }
     .slides .slide {
@@ -99,6 +99,7 @@
     }
     .slider-controls {
         width: 100%;
+        bottom: -31px;
     }
     .slider-controls .number {
         padding-left: 220px;
