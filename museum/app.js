@@ -6,6 +6,7 @@ class slide {
         let container = document.createElement('div')
         container.className = 'slide'
         container.style.backgroundImage = `url(${this.url})`
+        this.slideContainer = container
         selector.style.width = selector.offsetWidth + 1000 + 'px';
         selector.appendChild(container)
 
@@ -50,11 +51,13 @@ const header = document.getElementsByTagName("header")[0]
 const footerHide = document.querySelectorAll(".footer-hide")
 const social = document.querySelector(".social")
 const endBlock = document.querySelector(".end")
+const sliderWrapper = document.querySelector(".slider-wrapper")
 let lis = header.getElementsByTagName("nav")[0].getElementsByTagName("ul")[0].getElementsByTagName("li")
 let sliding = false
 let isVideoSliding = false
 let slideNum = 1
 let mainHidden = false
+let sliderClick = false
 
 var liArray = Array.from(lis)
 liArray.forEach(e => e.getElementsByTagName("a")[0].onclick = _ => closeMenu(true))
@@ -99,7 +102,8 @@ let moveSlide = (direction) => {
 
     currentSlide.innerHTML = '0' + slideNum
     if (direction === -1) {
-        sliderContainer.style.left = '-1000px'
+        sliderContainer.style.left = -slides[0].slideContainer.offsetWidth
+            // sliderContainer.style.left = '-1000px'
         sliderContainer.prepend(sliderContainer.lastChild);
         let anim = sliderContainer.animate({ left: `0px` }, 500)
         anim.onfinish = _ => {
@@ -109,7 +113,7 @@ let moveSlide = (direction) => {
     }
     if (direction === 1) {
         sliderContainer.style.left = '0px'
-        let anim = sliderContainer.animate({ left: `-1000px` }, 500)
+        let anim = sliderContainer.animate({ left: -slides[0].slideContainer.offsetWidth + 'px' }, 500)
         anim.onfinish = _ => {
             sliderContainer.style.left = ''
             sliderContainer.append(sliderContainer.firstChild);
@@ -216,4 +220,20 @@ navButton.onchange = _ => {
             welcomeLeftContainer.style = ""
         }
     closeMenu(false)
+}
+sliderWrapper.onclick = ev => {
+    sliderClick = true
+    ev.preventDefault()
+}
+let firstClick
+document.body.onmousedown = ev => {
+    firstClick = ev.clientX
+}
+document.body.onmouseup = ev => {
+    if (!sliderClick) return
+    if (ev.clientX - firstClick > 0) {
+        moveSlide(-1)
+    } else {
+        moveSlide(1)
+    }
 }
