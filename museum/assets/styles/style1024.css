@@ -69,7 +69,7 @@
         top: -50px;
     }
     .slider-wrapper {
-        height: 525px;
+        height: 560px;
         width: 700px;
     }
     .slides .slide {
@@ -99,6 +99,7 @@
     }
     .slider-controls {
         width: 100%;
+        bottom: -23px;
     }
     .slider-controls .number {
         padding-left: 220px;
@@ -151,7 +152,7 @@
         background-size: contain;
         display: block;
         padding-top: 25px;
-        min-width: 984px;
+        max-width: 984px;
         min-height: 504px;
         height: 504px;
     }
@@ -302,5 +303,11 @@
     .image-container {}
     .header-container {
         display: block;
+    }
+}
+
+@media (max-width:1023px) {
+    footer>.container {
+        flex-wrap: wrap;
     }
 }
