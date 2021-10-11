@@ -78,8 +78,11 @@ document.onfullscreenchange = _ => {
         fullscreen.style.backgroundImage = "url(assets/svg/collapse.svg)"
         fullscreen.style.backgroundSize = "200% 200%"
         fullscreen.style.backgroundPosition = "center"
+        controls.classList.add('fullscreen')
     } else {
         fullscreen.style = ''
+        controls.classList.remove('fullscreen')
+
     }
 }
 fullscreen.addEventListener('click', _ => {
