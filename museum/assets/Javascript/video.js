@@ -74,13 +74,12 @@ progressBar.onmouseup = _ => {
 
 
 document.onfullscreenchange = _ => {
-    let icon = fullscreen.querySelector('i')
     if (document.fullscreenElement) {
-        icon.classList.remove('fa-expand')
-        icon.classList.add('fa-compress')
+        fullscreen.style.backgroundImage = "url(assets/svg/collapse.svg)"
+        fullscreen.style.backgroundSize = "200% 200%"
+        fullscreen.style.backgroundPosition = "center"
     } else {
-        icon.classList.add('fa-expand')
-        icon.classList.remove('fa-compress')
+        fullscreen.style = ''
     }
 }
 fullscreen.addEventListener('click', _ => {
@@ -136,12 +135,14 @@ window.onkeypress = (key) => {
 const setVolume = (value) => {
     if (videoContainer.muted && value !== 0) {
         videoContainer.muted = false
+        muteButton.style = ''
     }
     videoContainer.volume = value / 100
     volumeBar.value = value
     document.documentElement.style.setProperty('--volume-position', value + '%')
     if (value == 0) {
-        // mute()
+        muteButton.style.backgroundImage = "url('assets/svg/mute.svg')"
+        videoContainer.muted = true
     }
 
 }

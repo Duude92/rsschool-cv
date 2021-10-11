@@ -555,7 +555,7 @@
     
     .video .video-player {
         padding-top: 76px;
-        width: 100%;
+        width: 1440px;
         margin-bottom: 50px;
         vertical-align: middle;
         display: table-cell;
@@ -693,7 +693,7 @@
         background-position: 60%;
         background-color: unset;
         display: block;
-        border-color: white;
+        border-color: #B3B3B3;
         border-style: solid;
         border-radius: 50%;
         border-width: 10px;
