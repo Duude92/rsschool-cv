@@ -853,6 +853,10 @@
         /* flex: auto; */
     }
     
+    .gallery-container .gallery-hidden {
+        opacity: 0;
+    }
+    
     .parallax {
         min-height: 251px;
         padding: 0 !important;

@@ -102,6 +102,8 @@ galleryImages.sort(() => .5 - Math.random())
 galleryImages.forEach(img => {
     let tempImage = new Image()
     tempImage.src = img
+    tempImage.className = 'gallery-hidden'
+        // tempImage.is
     galleryContainer.append(tempImage)
 })
 
