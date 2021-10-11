@@ -498,14 +498,14 @@
         background-size: cover;
     }
     
-    .explore-container>.explore-after {
+    .explore-after {
         position: absolute;
         right: 0;
         top: 0;
         background-image: url('../../assets/img/Explore/after.jpg');
-        width: var(--explore-pos);
+        width: 100%;
         height: 36.5vw;
-        background-position-x: right;
+        /* background-position-x: right; */
         background-size: cover;
     }
     
@@ -855,7 +855,7 @@
     
     .gallery-container .gallery-hidden {
         opacity: 0;
-        margin-top: 20px;
+        /* margin-top: 20px; */
     }
     
     .parallax {
@@ -1019,6 +1019,7 @@
         font-weight: bolder;
         letter-spacing: 2.1px;
         max-width: 150px;
+        /* max-width: 55%; */
         margin-right: 0px;
         margin-left: auto;
     }
@@ -1171,14 +1172,15 @@
     
     .overview>.count .count-text {
         margin: 0;
-        width: 400px;
+        width: 300px;
     }
     
     .overview>.count .sum {
         margin: 0;
         margin-left: auto;
         margin-right: 0;
-        right: 0px;
+        right: 10%;
+        position: absolute;
     }
     
     .overview>.count>.count-line::before {
@@ -1214,6 +1216,7 @@
         font-size: 32px;
         letter-spacing: 0;
         float: left;
+        position: relative;
     }
     
     .overview>.count>.total-sum>p {
@@ -1768,4 +1771,56 @@
     
     .hide {
         opacity: 0;
+    }
+    
+    .right {
+        right: 6%;
+        position: absolute;
+        top: 0;
+    }
+    
+    .count-line {
+        position: relative;
+    }
+    
+    .total-sum>.total-num-sum {
+        right: 13%;
+    }
+    
+    .total-num-sum {
+        margin-top: 0;
+        right: 6%;
+        position: absolute;
+        top: 0;
+        width: 40px;
+    }
+    
+    .total-container {
+        position: relative;
+    }
+    
+    #map {
+        width: 960px;
+        height: 620px;
+        margin-top: 104px;
+    }
+    
+    .img-comp-slider {
+        position: absolute;
+        top: 0px;
+        z-index: 100;
+        cursor: ew-resize;
+        width: 40px;
+        height: 700px;
+        opacity: 0.7;
+        background-image: url("../../assets/svg/explore_slider.svg");
+        /* background-size: contain; */
+    }
+    
+    .img-comp-overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
     }

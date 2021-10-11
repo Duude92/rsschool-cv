@@ -1,3 +1,4 @@
+// import map from "assets/Javascript/map.js"
 class slide {
     constructor(url) {
         this.url = url
@@ -193,6 +194,7 @@ let closeMenu = (checked) => {
     }
 
 }
+
 
 // setVideoProgress(50)
 // setVolume(50)

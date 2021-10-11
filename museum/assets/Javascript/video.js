@@ -246,7 +246,6 @@ const playlistUpdate = () => {
 }
 
 playButtons.forEach(button => {
-    console.log(button)
     button.addEventListener('click', _ => {
         if (videoContainer.paused) {
             playVideo()

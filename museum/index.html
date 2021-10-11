@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
 </head>
 
 <body class="preload">
@@ -61,21 +63,25 @@
                     <input type="text" id="nameInput">
                     <input type="email" id="mailInput">
                     <input type="text" id="phoneInput">
-                    <select id="ticketType"></select>
+                    <select id="ticketType">
+                        <option value="permanent">Permanent exhibition</option> 
+                        <option value="temporary">Temporary exhibition</option> 
+                        <option value="combined">Combined Admission</option>
+                    </select>
                     <div class="entryTicket">
                         <h3 class="">Entry Ticket</h3>
                         <h4>Basic 18+ (20 €)</h4>
                         <h4>Senior 65+ (10 €)</h4>
                         <div class="amount-container">
                             <div class="amount flex">
-                                <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                <input type="number" name="basic" id="basic1" min="0" max="20" value="1">
-                                <button type="button" class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button type="button" class="amount-button" onclick="countBasic(this,-1)">-</button>
+                                <input type="number" class="basic-amount" name="basic" id="basic1" min="0" max="20" value="1">
+                                <button type="button" class="amount-button" onclick="countBasic(this,1)">+</button>
                             </div>
                             <div class="amount flex">
-                                <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                <input type="number" name="senior" id="senior1" min="0" max="20" value="1">
-                                <button type="button" class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                <button type="button" class="amount-button" onclick="countSenior(this,-1)">-</button>
+                                <input type="number" class="senior-amount" name="senior" id="senior1" min="0" max="20" value="1">
+                                <button type="button" class="amount-button" onclick="countSenior(this,1)">+</button>
                             </div>
                         </div>
                     </div>
@@ -92,16 +98,20 @@
                     <div class="count">
                         <div class="count-line basic">
                             <div class="count-text">Basic (20 €)</div>
-                            <div class="sum">0</div>&nbsp;€
+                            <div class="sum basic-sum">0</div>
+                            <div class="right">€</div>
                         </div>
                         <div class="count-line senior">
                             <div class="count-text">Senior (10 €)</div>
-                            <div class="sum">0</div>&nbsp;€
+                            <div class="sum senior-sum">0</div>
+                            <div class="right">€</div>
+
                         </div>
                         <hr>
                         <div class="total-sum">
                             <p class="total">Total:</p>
-                            <div class="total-sum">0</div>&nbsp;€
+                            <div class="total-num-sum">0</div>
+                            <div class="right">€</div>
                         </div>
                     </div>
                     <div class="payment">
@@ -212,8 +222,10 @@
                 </div>
                 <div class="explore-container">
                     <div class="before"></div>
-                    <div class="explore-positioner"></div>
-                    <div class="explore-after"></div>
+                    <!-- <div class="explore-positioner"></div> -->
+                    <div class="img-comp-overlay">
+                        <div class="explore-after"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -291,16 +303,16 @@
                         <div class="ticket-type">
                             <h2>Ticket Type</h2>
                             <!-- <div class="flex-column"> -->
-                            <div class="ticket-type-container">
-                                <input class="custom-radio" type="radio" id="Permanent" name="ticket" checked>
-                                <label for="Permanent">Permanent exhibition</label>
+                            <form class="ticket-type-container">
+                                <input class="custom-radio" type="radio" id="permanent" name="ticket" checked>
+                                <label for="permanent">Permanent exhibition</label>
                                 <br>
-                                <input class="custom-radio" type="radio" id="Temporary" name="ticket">
-                                <label for="Temporary">Temporary exhibition</label>
+                                <input class="custom-radio" type="radio" id="temporary" name="ticket">
+                                <label for="temporary">Temporary exhibition</label>
                                 <br>
-                                <input class="custom-radio" type="radio" id="Combined" name="ticket">
-                                <label for="Combined">Combined Admission</label>
-                            </div>
+                                <input class="custom-radio" type="radio" id="combined" name="ticket">
+                                <label for="combined">Combined Admission</label>
+                            </form>
                         </div>
 
                         <div class="ticket-amount">
@@ -309,22 +321,24 @@
                                 <div class="amount-block">
                                     Basic 18+
                                     <div class="amount flex">
-                                        <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                        <input type="number" name="basic" id="basic" min="0" max="20" value="1">
-                                        <button type="button" class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                        <button type="button" class="amount-button" onclick="countBasic(this,-1)">-</button>
+                                        <input type="number" class="basic-amount" name="basic" id="basic" min="0" max="20" value="1">
+                                        <button type="button" class="amount-button" onclick="countBasic(this,1)">+</button>
                                     </div>
                                 </div>
                                 <div class="amount-block">
                                     Senior 65+
                                     <div class="amount flex">
-                                        <button type="button" class="amount-button" onclick="this.nextElementSibling.stepDown()">-</button>
-                                        <input type="number" name="senior" id="senior" min="0" max="20" value="1">
-                                        <button type="button" class="amount-button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                        <button type="button" class="amount-button" onclick="countSenior(this,-1)">-</button>
+                                        <input type="number" class="senior-amount" name="senior" id="senior" min="0" max="20" value="1">
+                                        <button type="button" class="amount-button" onclick="countSenior(this,1)">+</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="total-container">
-                                <p class="total"> Total €220</p>
+                                <div class="total"> Total €
+                                    <div class="total total-num-sum">0</div>
+                                </div>
                                 <button class="buy-button">
                                 Buy Now
                                 </button>
@@ -354,7 +368,8 @@
                             <br> mail: <a href="mailto:info@louvre.fr">info@louvre.fr</a>
                         </div>
                     </div>
-                    <img src="assets/img/Placement.png" alt="Current Placement">
+                    <div id="map"></div>
+                    <!-- <img src="assets/img/Placement.png" alt="Current Placement"> -->
                 </div>
             </div>
         </section>
@@ -412,6 +427,9 @@
     <script src="app.js"></script>
     <script src="assets/Javascript/video.js"></script>
     <script src="assets/Javascript/gallery.js"></script>
+    <script src="assets/Javascript/tickets.js"></script>
+    <script src="assets/Javascript/map.js"></script>
+    <script src="assets/Javascript/comparisons.js"></script>
 
 </body>
 
