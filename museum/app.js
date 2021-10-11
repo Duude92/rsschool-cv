@@ -22,11 +22,22 @@ class video {
     }
     Init = (selector) => {
         selector.innerHTML += this.innerHTML
-            // selector.style.width = selector.offsetWidth + 486 + 'px';
+        this.videoContainer = selector.lastChild
+        this.videoContainer.contentWindow.document.onclick = _ => {
+            console.log(1)
+            videos.forEach(v => {
+                if (v != this) v.Stop()
+            })
+        }
+
+        // this.videoContainer.src = `${this.url}?autoplay=1`
 
         let elem = document.createElement('div')
         elem.className = "video-dot"
         videoSliderDots.append(elem)
+    }
+    Stop = _ => {
+        this.videoContainer.src = `${this.url}?autoplay=0`
     }
 }
 let sliderContainer = document.querySelector(".slides")
@@ -70,6 +81,8 @@ slides.push(new slide('assets/img/Welcome-slider/4.jpg'))
 slides.push(new slide('assets/img/Welcome-slider/5.jpg'))
 
 slides.forEach(slide => slide.InitOnPage(sliderContainer))
+slideButtons.childNodes[0].classList.add('slide-button-active')
+
 
 let videos = []
 videos.push(new video('https://www.youtube.com/embed/zp1BXPX8jcU'))
@@ -96,13 +109,18 @@ galleryImages.forEach(img => {
 let moveSlide = (direction) => {
     if (sliding) return
     sliding = true
+    console.log(slideNum)
+    slideButtons.childNodes[slideNum - 1].classList.remove('slide-button-active')
+
     slideNum += direction
+
     if (slideNum < 1) slideNum = sliderContainer.childElementCount
     else if (slideNum > sliderContainer.childElementCount) slideNum = 1
+    slideButtons.childNodes[slideNum - 1].classList.add('slide-button-active')
 
     currentSlide.innerHTML = '0' + slideNum
     if (direction === -1) {
-        sliderContainer.style.left = -slides[0].slideContainer.offsetWidth
+        sliderContainer.style.left = -slides[0].slideContainer.offsetWidth + 'px'
             // sliderContainer.style.left = '-1000px'
         sliderContainer.prepend(sliderContainer.lastChild);
         let anim = sliderContainer.animate({ left: `0px` }, 500)
@@ -113,6 +131,7 @@ let moveSlide = (direction) => {
     }
     if (direction === 1) {
         sliderContainer.style.left = '0px'
+            // let anim = sliderContainer.animate({ left: '-1000px' }, 500)
         let anim = sliderContainer.animate({ left: -slides[0].slideContainer.offsetWidth + 'px' }, 500)
         anim.onfinish = _ => {
             sliderContainer.style.left = ''
@@ -123,30 +142,30 @@ let moveSlide = (direction) => {
     }
 }
 let moveVideo = (direction) => {
-    if (isVideoSliding) return
-    isVideoSliding = true
+        if (isVideoSliding) return
+        isVideoSliding = true
 
-    if (direction === -1) {
-        videoSliderContainer.style.left = '-486px'
-        videoSliderContainer.prepend(videoSliderContainer.lastChild);
-        let anim = videoSliderContainer.animate({ left: `0px` }, 500)
-        anim.onfinish = _ => {
+        if (direction === -1) {
+            videoSliderContainer.style.left = '-486px'
+            videoSliderContainer.prepend(videoSliderContainer.lastChild);
+            let anim = videoSliderContainer.animate({ left: `0px` }, 500)
+            anim.onfinish = _ => {
+                videoSliderContainer.style.left = ''
+                isVideoSliding = false
+            }
+        }
+        if (direction === 1) {
             videoSliderContainer.style.left = ''
-            isVideoSliding = false
+            videoSliderContainer.append(videoSliderContainer.firstChild);
+            let anim = videoSliderContainer.animate({ left: `-486px` }, 500)
+            anim.onfinish = _ => {
+                videoSliderContainer.style.left = ''
+                isVideoSliding = false
+            }
         }
     }
-    if (direction === 1) {
-        videoSliderContainer.style.left = ''
-        videoSliderContainer.append(videoSliderContainer.firstChild);
-        let anim = videoSliderContainer.animate({ left: `-486px` }, 500)
-        anim.onfinish = _ => {
-            videoSliderContainer.style.left = ''
-            isVideoSliding = false
-        }
-    }
-}
-let setVideoProgress = (value) => document.documentElement.style.setProperty('--progress-position', (value) + '%')
-let setVolume = (value) => document.documentElement.style.setProperty('--volume-position', (value) + '%')
+    // let setVideoProgress = (value) => document.documentElement.style.setProperty('--progress-position', (value) + '%')
+    // let setVolume = (value) => document.documentElement.style.setProperty('--volume-position', (value) + '%')
 
 let closeMenu = (checked) => {
     console.log('call')
@@ -171,9 +190,9 @@ let closeMenu = (checked) => {
 
 }
 
-setVideoProgress(50)
-setVolume(50)
-    //---events
+// setVideoProgress(50)
+// setVolume(50)
+//---events
 buyButton.addEventListener('click', _ => {
     bookingPanel.animate({ left: 0 }, 500).onfinish = _ => bookingPanel.style.left = '0'
     if (document.body.clientWidth <= 768) {
@@ -231,9 +250,10 @@ document.body.onmousedown = ev => {
 }
 document.body.onmouseup = ev => {
     if (!sliderClick) return
-    if (ev.clientX - firstClick > 0) {
+    if (ev.clientX - firstClick > 10) {
         moveSlide(-1)
-    } else {
+    } else if (ev.clientX - firstClick < -10) {
         moveSlide(1)
     }
+    sliderClick = false
 }

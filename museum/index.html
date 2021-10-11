@@ -224,22 +224,39 @@
                     <p class="video-description">Enter and visit one of the most famous museums in the world and enjoy masterpieces such as Mona Lisa or Hammurabi's Code</p>
                 </div>
 
+
+
                 <div class="video-player">
-                    <div class="video-player-content">
+                    <div class="video-player-container">
+                        <div class="video-player-content">
+
+                            <button class="play playbutton play-main"></button>
+                            <video src="assets/video/video0.mp4"></video>
+                        </div>
+                        <div class="custom-controls video-control-panel flex">
+                            <button class="play play-control playbutton"></button>
+                            <input type="range" name="scrollbar" id="scrollbar" class="scrollbar" onchange="setVideoTime(this.value)" oninput="setVideoTime(this.value)">
+                            <div class="volume">
+                                <button class="volumebutton mute"></button>
+                                <input type="range" name="volumebar" id="volumebar" class="volumebar" onchange="setVolume(this.value)" oninput="setVolume(this.value)">
+                            </div>
+                            <button class="fullscreen"></button>
+                        </div>
+                    </div>
+
+                    <!-- <div class="video-player-content">
                         <button class="playbutton"></button>
                     </div>
                     <div class="video-control-panel flex">
-                        <!-- <button class="previous"></button> -->
                         <button class="playbutton"></button>
-                        <!-- <button class="next"></button> -->
                         <input type="range" name="scrollbar" id="scrollbar" class="scrollbar" onchange="setVideoProgress(this.value)" oninput="setVideoProgress(this.value)">
                         <div class="volume">
                             <button class="volumebutton"></button>
                             <input type="range" name="volumebar" id="volumebar" class="volumebar" onchange="setVolume(this.value)" oninput="setVolume(this.value)">
                         </div>
-                        <button class="fullscreen"></button>
+                        <button class="fullscreen"></button> -->
 
-                    </div>
+                    <!-- </div> -->
                     <div class="video-slider">
                         <div class="video-slider-control" id="video-left"></div>
                         <div class="video-slider-control" id="video-right"></div>
@@ -393,6 +410,7 @@
     </footer>
     <!-- <div class="body-scrollbar"></div> -->
     <script src="app.js"></script>
+    <script src="assets/Javascript/video.js"></script>
 
 </body>
 
