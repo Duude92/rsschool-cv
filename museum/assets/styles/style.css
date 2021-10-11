@@ -855,6 +855,7 @@
     
     .gallery-container .gallery-hidden {
         opacity: 0;
+        margin-top: 20px;
     }
     
     .parallax {

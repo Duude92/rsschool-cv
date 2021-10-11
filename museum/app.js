@@ -93,17 +93,19 @@ videos.push(new video('https://www.youtube.com/embed/2OR0OCr6uRE'))
 videoSliderContainer.style.width = 0
 videos.forEach(v => v.Init(videoSliderContainer))
 
+let galleryImageUrls = []
 let galleryImages = []
 for (let index = 1; index <= 15; index++) {
-    galleryImages.push(`assets/img/Gallery/galery${index}.jpg`)
+    galleryImageUrls.push(`assets/img/Gallery/galery${index}.jpg`)
 }
-galleryImages.sort(() => .5 - Math.random())
+galleryImageUrls.sort(() => .5 - Math.random())
 
-galleryImages.forEach(img => {
+galleryImageUrls.forEach(img => {
     let tempImage = new Image()
     tempImage.src = img
     tempImage.className = 'gallery-hidden'
         // tempImage.is
+    galleryImages.push(tempImage)
     galleryContainer.append(tempImage)
 })
 
