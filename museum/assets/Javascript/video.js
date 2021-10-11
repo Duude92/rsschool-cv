@@ -141,7 +141,7 @@ const setVolume = (value) => {
     volumeBar.value = value
     document.documentElement.style.setProperty('--volume-position', value + '%')
     if (value == 0) {
-        mute()
+        // mute()
     }
 
 }
