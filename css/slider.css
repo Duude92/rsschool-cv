@@ -1,0 +1,24 @@
+:root {
+    --slide-width: 100%;
+    --slider-width: 100%;
+    --left-position: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#slider-container {
+    position: absolute;
+    width: var(--slider-width);
+    height: 100%;
+    left: var(--left-position)
+}
+
+.slide {
+    width: var(--slide-width);
+    height: 100%;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
