@@ -1,3 +1,5 @@
+import getTimeOfDay from "./timeofday.js"
+
 const sliderContainer = document.getElementById("slider-container")
 const sliderLeft = document.querySelector(".slide-prev")
 const sliderRight = document.querySelector(".slide-next")
@@ -15,8 +17,6 @@ let InitializeBackgroundSlider = _ => {
     }
 
     currentSlide = Math.floor(Math.random() * 19)
-    console.log(currentSlide)
-
 
     initImages()
 
@@ -51,7 +51,7 @@ let initImages = _ => {
         if (nextSlide < 10)
             nextSlide = '0' + nextSlide
 
-        sliderContainer.children[index].style.backgroundImage = `url(https://raw.githubusercontent.com/Duude92/stage1-tasks/assets/images/afternoon/${nextSlide}.jpg)`
+        sliderContainer.children[index].style.backgroundImage = `url(https://raw.githubusercontent.com/Duude92/stage1-tasks/assets/images/${getTimeOfDay()}/${nextSlide}.jpg)`
 
     }
 }
