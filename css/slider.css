@@ -12,7 +12,8 @@ body {
     position: absolute;
     width: var(--slider-width);
     height: 100%;
-    left: var(--left-position)
+    left: var(--left-position);
+    z-index: -1;
 }
 
 .slide {
