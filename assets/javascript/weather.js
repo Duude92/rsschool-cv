@@ -8,12 +8,9 @@ let getWeather = async _ => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=2859d4e6c866d19c3074a62e57efa084&units=metric`
     const res = await fetch(url)
     const data = await res.json()
-    console.log(data)
     resetWidget()
 
     if (data.cod === 200) {
-
-        // cityContainer.value = data.name
         weatherIcon.classList.add(`owf-${data.weather[0].id}`)
         temperature.textContent = `${data.main.temp}°C`
         weatherDescription.textContent = data.weather[0].description
@@ -28,7 +25,6 @@ let resetWidget = _ => {
 
 }
 cityContainer.onchange = value => {
-    console.log(value.target.value)
     city = value.target.value
     getWeather()
     localStorage.setItem('city', city)
