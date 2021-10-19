@@ -15,6 +15,7 @@ let getRandomQuote = _ => {
 }
 
 changeQuote.onclick = _ => getRandomQuote()
-window.onload = _ => {
+
+window.addEventListener("load", _ => {
     getQuotes().then(getRandomQuote)
-}
+})

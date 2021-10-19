@@ -22,7 +22,7 @@ let play = src => {
     audioPlayer.onloadedmetadata = _ => audioPlayer.play()
 }
 
-window.onload = _ => {
+window.addEventListener("load", _ => {
     getMusic().then(_ => play(music[0].source))
 
-}
+})
