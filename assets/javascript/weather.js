@@ -3,6 +3,8 @@ const weatherIcon = document.querySelector('.weather-icon')
 const temperature = document.querySelector('.temperature')
 const weatherDescription = document.querySelector('.weather-description')
 const weatherError = document.querySelector('.weather-error')
+const wind = document.querySelector('.wind')
+const humidity = document.querySelector('.humidity')
 let city = 'Минск'
 let getWeather = async _ => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=2859d4e6c866d19c3074a62e57efa084&units=metric`
@@ -14,6 +16,8 @@ let getWeather = async _ => {
         weatherIcon.classList.add(`owf-${data.weather[0].id}`)
         temperature.textContent = `${data.main.temp}°C`
         weatherDescription.textContent = data.weather[0].description
+        wind.textContent = `Wind speed: ${data.wind.speed}m/s, wind direction: ${data.wind.deg}°.`
+        humidity.textContent = `Humidity: ${data.main.humidity}%`
     } else {
         weatherError.textContent = data.message
     }

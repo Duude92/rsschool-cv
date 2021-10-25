@@ -3,27 +3,32 @@ const playList = document.querySelector(".play-list")
 const playButton = document.querySelector(".play")
 const nextButton = document.querySelector(".play-next")
 const prevButton = document.querySelector(".play-prev")
+const songName = document.querySelector(".song-name")
+const progress = document.getElementById("progress")
+const volumeBar = document.getElementById("volumebar")
 let music = []
 let currentSong = 0
 
 let getMusic = async _ => {
     const result = await fetch("/assets/json/audio.json")
     music = await result.json()
-    console.log(music)
     music.forEach(e => {
         const li = document.createElement('li')
         li.textContent = e.name
         li.className = "play-item"
-        li.onclick = _ => play(e.source)
+        li.onclick = _ => play(e)
         playList.append(li)
     })
 }
-let play = src => {
+let play = (musicObject) => {
     playButton.classList.remove('play')
     playButton.classList.add('pause')
 
-    audioPlayer.src = src
-        // audioPlayer.muted = true
+    audioPlayer.src = musicObject.source
+    songName.textContent = musicObject.name
+
+
+    // audioPlayer.muted = true
     audioPlayer.onloadedmetadata = _ => audioPlayer.play()
 }
 playButton.onclick = _ => {
@@ -44,7 +49,7 @@ nextButton.onclick = _ => {
     } else {
         currentSong = 0
     }
-    play(music[currentSong].source)
+    play(music[currentSong])
 
 }
 prevButton.onclick = _ => {
@@ -53,10 +58,25 @@ prevButton.onclick = _ => {
     } else {
         currentSong = music.length - 1
     }
-    play(music[currentSong].source)
+    play(music[currentSong])
 
 }
+progress.onchange = ev => {
+    audioPlayer.currentTime = ev.target.value / 100 * audioPlayer.duration
+}
+volumeBar.oninput = ev => {
+    audioPlayer.volume = ev.target.value
+}
 
+
+
+audioPlayer.ontimeupdate = _ => {
+    progress.value = audioPlayer.currentTime / audioPlayer.duration * 100
+
+}
 window.addEventListener("load", _ => {
-    getMusic().then(_ => audioPlayer.src = music[0].source)
+    getMusic().then(_ => {
+        audioPlayer.src = music[0].source
+        songName.textContent = music[0].name
+    })
 })
