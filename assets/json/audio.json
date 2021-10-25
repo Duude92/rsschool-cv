@@ -1,7 +1,11 @@
 [{
-    "source": "/assets/sounds/1.mp3",
-    "name": "lolo"
+    "source": "/assets/sounds/Linkin Park — New Divide.mp3",
+    "name": "Linkin Park — New Divide"
 }, {
-    "source": "/assets/sounds/2.mp3",
-    "name": "lolo2"
+    "source": "/assets/sounds/Linkin Park — What Ive Done.mp3",
+    "name": "Linkin Park — What Ive Done"
+
+}, {
+    "source": "/assets/sounds/Linkin Park — Burn It Down.mp3",
+    "name": "Linkin Park — Burn It Down"
 }]
