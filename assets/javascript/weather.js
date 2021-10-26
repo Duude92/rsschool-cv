@@ -26,6 +26,8 @@ let resetWidget = _ => {
     weatherIcon.className = "weather-icon owf"
     temperature.textContent = ''
     weatherDescription.textContent = ''
+    wind.textContent = ''
+    humidity.textContent = ''
 
 }
 cityContainer.onchange = value => {
