@@ -31,6 +31,14 @@ let play = (musicObject) => {
     // audioPlayer.muted = true
     audioPlayer.onloadedmetadata = _ => audioPlayer.play()
 }
+let playNext = _ => {
+    if (currentSong + 1 < music.length) {
+        currentSong++
+    } else {
+        currentSong = 0
+    }
+    play(music[currentSong])
+}
 playButton.onclick = _ => {
     if (audioPlayer.paused) {
         playButton.classList.remove('play')
@@ -43,15 +51,7 @@ playButton.onclick = _ => {
         audioPlayer.pause()
     }
 }
-nextButton.onclick = _ => {
-    if (currentSong + 1 < music.length) {
-        currentSong++
-    } else {
-        currentSong = 0
-    }
-    play(music[currentSong])
-
-}
+nextButton.onclick = playNext
 prevButton.onclick = _ => {
     if (currentSong - 1 >= 0) {
         currentSong--
@@ -69,7 +69,9 @@ volumeBar.oninput = ev => {
 }
 
 
-
+audioPlayer.onended = _ => {
+    playNext()
+}
 audioPlayer.ontimeupdate = _ => {
     progress.value = audioPlayer.currentTime / audioPlayer.duration * 100
 
