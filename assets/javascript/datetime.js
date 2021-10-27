@@ -9,6 +9,7 @@ let showTime = _ => {
 }
 let showDate = _ => {
     const date = new Date()
+
     const options = { month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'UTC' };
     dateContainer.textContent = date.toLocaleDateString('ru-Ru', options)
 }

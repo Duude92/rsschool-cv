@@ -14,15 +14,21 @@ let getMusic = async _ => {
     music = await result.json()
     music.forEach(e => {
         const li = document.createElement('li')
+        e.element = li
         li.textContent = e.name
         li.className = "play-item"
-        li.onclick = _ => play(e)
+        li.onclick = _ => {
+            play(e)
+        }
         playList.append(li)
     })
 }
 let play = (musicObject) => {
     playButton.classList.remove('play')
     playButton.classList.add('pause')
+    musicObject.element.classList.add('item-active')
+    music.forEach(e => { if (e !== musicObject) e.element.classList.remove('item-active') })
+
 
     audioPlayer.src = musicObject.source
     songName.textContent = musicObject.name

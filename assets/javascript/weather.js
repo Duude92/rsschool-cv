@@ -28,7 +28,6 @@ let resetWidget = _ => {
     weatherDescription.textContent = ''
     wind.textContent = ''
     humidity.textContent = ''
-
 }
 cityContainer.onchange = value => {
     city = value.target.value
