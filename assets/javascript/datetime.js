@@ -2,9 +2,10 @@ const timeContainer = document.getElementById("time")
 const dateContainer = document.getElementById("date")
 
 let showTime = _ => {
+    // const date = new Date(2021, 10, 21, 20, 20, 20, 20) //test
     const date = new Date()
 
-    timeContainer.textContent = date.toLocaleTimeString()
+    timeContainer.textContent = date.toLocaleTimeString('en-GB')
     setTimeout(showTime, 1000)
 }
 let showDate = _ => {
